@@ -25,6 +25,16 @@ class Api::V1::DriversController < ApplicationController
         render json: drivers.to_json
     end
 
+    def kongs
+        drivers = Driver.where(is_kong: true)
+        render json: drivers.to_json
+    end
+
+    def koopalings
+        drivers = Driver.where(is_koopaling: true)
+        render json: drivers.to_json
+    end
+
     def name
         driver = Driver.find_by(name: params[:driver_name].titleize)
         render json: driver.to_json
