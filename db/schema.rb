@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_170845) do
+ActiveRecord::Schema.define(version: 2021_05_16_190410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "course_driver_connections", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "driver_id"
+    t.boolean "is_favored", default: false
+    t.boolean "is_favorite", default: false
+    t.boolean "is_favorite_at_level_3", default: false
+    t.boolean "is_favorite_at_level_6", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_course_driver_connections_on_course_id"
+    t.index ["driver_id"], name: "index_course_driver_connections_on_driver_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "debut_tour"
+    t.datetime "date_added"
+    t.string "debut_game"
+    t.boolean "is_reverse"
+    t.boolean "is_trick"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "drivers", force: :cascade do |t|
     t.string "name"

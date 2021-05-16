@@ -1,0 +1,2 @@
+class CourseDriverConnectionsController < ApplicationController
+end
