@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rarity: MyString
+  special_skill: MyString
+  debut_tour: MyString
+  date_added: 2021-05-16 13:08:45
+  has_extended_tongue: false
+  has_horns: false
+  has_mustache: false
+  has_shell: false
+  has_three_hairs: false
+  is_baby: false
+  is_daily_select: false
+  is_kong: false
+  is_koopaling: false
+  wears_crown: false
+  wears_dress: false
+  wears_earrings: false
+  wears_gloves: false
+  wears_hat: false
+  wears_helment: false
+  wears_ribbon: false
+  wears_short_sleeves: false
+  wears_tie: false
+
+two:
+  name: MyString
+  rarity: MyString
+  special_skill: MyString
+  debut_tour: MyString
+  date_added: 2021-05-16 13:08:45
+  has_extended_tongue: false
+  has_horns: false
+  has_mustache: false
+  has_shell: false
+  has_three_hairs: false
+  is_baby: false
+  is_daily_select: false
+  is_kong: false
+  is_koopaling: false
+  wears_crown: false
+  wears_dress: false
+  wears_earrings: false
+  wears_gloves: false
+  wears_hat: false
+  wears_helment: false
+  wears_ribbon: false
+  wears_short_sleeves: false
+  wears_tie: false
