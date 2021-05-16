@@ -21,24 +21,24 @@ ActiveRecord::Schema.define(version: 2021_05_16_170845) do
     t.string "special_skill"
     t.string "debut_tour"
     t.datetime "date_added"
-    t.boolean "has_extended_tongue"
-    t.boolean "has_horns"
-    t.boolean "has_mustache"
-    t.boolean "has_shell"
-    t.boolean "has_three_hairs"
-    t.boolean "is_baby"
-    t.boolean "is_daily_select"
-    t.boolean "is_kong"
-    t.boolean "is_koopaling"
-    t.boolean "wears_crown"
-    t.boolean "wears_dress"
-    t.boolean "wears_earrings"
-    t.boolean "wears_gloves"
-    t.boolean "wears_hat"
-    t.boolean "wears_helment"
-    t.boolean "wears_ribbon"
-    t.boolean "wears_short_sleeves"
-    t.boolean "wears_tie"
+    t.boolean "has_extended_tongue", default: false
+    t.boolean "has_horns", default: false
+    t.boolean "has_mustache", default: false
+    t.boolean "has_shell", default: false
+    t.boolean "has_three_hairs", default: false
+    t.boolean "is_baby", default: false
+    t.boolean "is_daily_select", default: false
+    t.boolean "is_kong", default: false
+    t.boolean "is_koopaling", default: false
+    t.boolean "wears_crown", default: false
+    t.boolean "wears_dress", default: false
+    t.boolean "wears_earrings", default: false
+    t.boolean "wears_gloves", default: false
+    t.boolean "wears_hat", default: false
+    t.boolean "wears_helment", default: false
+    t.boolean "wears_ribbon", default: false
+    t.boolean "wears_short_sleeves", default: false
+    t.boolean "wears_tie", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
