@@ -35,6 +35,17 @@ class Api::V1::DriversController < ApplicationController
         render json: favorite_courses.to_json
     end
 
+    def favored_courses
+        driver_id = Driver.find_by(name: params[:driver_name].titleize)
+        connections = CourseDriverConnection.where(driver_id: driver_id, is_favored: true)
+        favored_courses = []
+        connections.each do |connection|
+            course = Course.find(connection.course.id)
+            favorite_courses << course
+        end
+        render json: favored_courses.to_json
+    end
+
     def high_end
         drivers = Driver.where(rarity: "High-End")
         render json: drivers.to_json

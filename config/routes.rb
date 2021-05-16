@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
   get 'api/v1/drivers/babies', :to => 'api/v1/drivers#babies'
   get 'api/v1/drivers/favorite_courses', :to => 'api/v1/drivers#favorite_courses'
+  get 'api/v1/drivers/favored_courses', :to => 'api/v1/drivers#favored_courses'
   get 'api/v1/drivers/high_end', :to => 'api/v1/drivers#high_end'
   get 'api/v1/drivers/kongs', :to => 'api/v1/drivers#kongs'
   get 'api/v1/drivers/koopalings', :to => 'api/v1/drivers#koopalings'
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
       resources :drivers
     end
   end
+  get '*other', to: 'home#index'
 end
