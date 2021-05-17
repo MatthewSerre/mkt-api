@@ -13,7 +13,7 @@
 <script>
     function makeApiCall() {
         let request = new XMLHttpRequest();
-        let elem = document.querySelector ("#fart")
+        let elem = document.querySelector ("#stuff")
         request.open("GET", "/api/v1/drivers");
         request.send();
         request.onload = () => {
@@ -41,6 +41,7 @@
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;overflow-scroll&#34;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     </code></pre></div><p>Using Sass variables, you may customize the overflow utilities by changing the <code>$overflows</code> variable in <code>_variables.scss</code>.</p>
 </div>
-
-<pre class="prettyprint"><p id="stuff"></p></pre>
+<div class="overflow-auto">
+<class="prettyprint"><code class="language-js" id="stuff"></code></pre>
     
+</div>
