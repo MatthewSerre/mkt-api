@@ -6,27 +6,24 @@
 <script>
     function makeApiCall() {
         let request = new XMLHttpRequest();
-        let elem = document.querySelector ("#stuff")
-        request.open("GET", "/api/v1/drivers");
+        request.open("GET", "/api/v1/drivers/name?driver_name=mario");
         request.send();
         request.onload = () => {
-            console.log(request);
-            console.log(JSON.parse(request.response));
-            elem.innerHTML = request.response;
+            let value = JSON.parse(request.response);
+            document.getElementById("json").textContent = JSON.stringify(value, undefined, 2);
         }
     }
 </script>
 
 <div class="container">
     <h1>Mario Kart Tour API</h1>
+    <p>Make a test call to return data for Mario.</p>
     <button type="button" onclick="makeApiCall()">Make API Call</button>
     <br />
     <br />
-    <div class="overflow-auto">
-        <div class="highlight">
-            <pre class="prettyprint">
-                <code class="language-js" id="stuff"></code>
-            </pre>
-        </div>
-    </div>
+    <pre>
+        <code id="json">
+
+        </code>
+    </pre>
 </div>
