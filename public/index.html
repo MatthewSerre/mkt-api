@@ -1,14 +1,7 @@
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
 
 <script>
     function makeApiCall() {
@@ -22,26 +15,18 @@
             elem.innerHTML = request.response;
         }
     }
-
-
 </script>
 
-<h1>Mario Kart Tour API</h1>
-
-<p>Hello, world!</p>
-
-<button type="button" onclick="makeApiCall()">Click Me!</button>
-
-<div class="overflow-auto">
-
-
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;overflow-auto&#34;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;overflow-hidden&#34;</span><span class="p">&gt;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;overflow-visible&#34;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;overflow-scroll&#34;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    </code></pre></div><p>Using Sass variables, you may customize the overflow utilities by changing the <code>$overflows</code> variable in <code>_variables.scss</code>.</p>
-</div>
-<div class="overflow-auto">
-<class="prettyprint"><code class="language-js" id="stuff"></code></pre>
-    
+<div class="container">
+    <h1>Mario Kart Tour API</h1>
+    <button type="button" onclick="makeApiCall()">Make API Call</button>
+    <br />
+    <br />
+    <div class="overflow-auto">
+        <div class="highlight">
+            <pre class="prettyprint">
+                <code class="language-js" id="stuff"></code>
+            </pre>
+        </div>
+    </div>
 </div>
