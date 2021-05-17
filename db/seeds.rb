@@ -1,10 +1,5 @@
 require 'csv'
 
-# csv_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
-# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-# # fp = open(Rails.root.join('lib', 'seeds', 'drivers.csv'))
-# # data = fp.read().decode("utf-8-sig").encode("utf-8")
-
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
 csv = CSV.parse(csv_text.scrub, headers: true)
 csv.each do |row|
@@ -34,4 +29,19 @@ csv.each do |row|
     d.wears_tie = row['wears_tie']
     d.save
     puts "#{d.name} saved."
+end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
+csv = CSV.parse(csv_text.scrub, headers: true)
+csv.each do |row|
+    c = Course.new
+    c.name = row['name']
+    c.debut_tour = row['debut_tour']
+    c.date_added = row['date_added']
+    c.debut_game = row['debut_game']
+    c.debut_system = row['debut_system']
+    c.is_reverse = row['is_reverse']
+    c.is_trick = row['is_trick']
+    c.save
+    puts "#{c.name} saved."
 end

@@ -1,7 +1,9 @@
 class Api::V1::CoursesController < ApplicationController
 
     def index
+        binding.pry
         courses = Course.all
-        render json: courses.to_json
+        render json: courses
     end
+
 end

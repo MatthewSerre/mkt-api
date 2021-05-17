@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   root to: 'home#index'
+
+  namespace :api do
+    namespace :v1 do
+      resources :courses
+    end
+  end
+
   get 'api/v1/drivers/babies', :to => 'api/v1/drivers#babies'
   get 'api/v1/drivers/favorite_courses', :to => 'api/v1/drivers#favorite_courses'
   get 'api/v1/drivers/favored_courses', :to => 'api/v1/drivers#favored_courses'
