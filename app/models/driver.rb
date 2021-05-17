@@ -26,4 +26,15 @@ class Driver < ApplicationRecord
         end
         favorite_courses.sort_by {|obj| obj.id}
     end
+
+    def self.find_driver_and_favored_courses(driver_name)
+        driver = Driver.find_by(name: params[:driver_name].titleize)
+        connections = CourseDriverConnection.where(driver_id: driver.id, is_favored: true)
+        favored_courses = []
+        connections.each do |connection|
+            course = Course.find(connection.course.id)
+            favorite_courses << course
+        end
+        favored_courses.sort_by {|obj| obj.id}
+    end
 end

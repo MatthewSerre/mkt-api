@@ -16,13 +16,7 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def favored_courses
-        driver_id = Driver.find_by(name: params[:driver_name].titleize)
-        connections = CourseDriverConnection.where(driver_id: driver_id, is_favored: true)
-        favored_courses = []
-        connections.each do |connection|
-            course = Course.find(connection.course.id)
-            favorite_courses << course
-        end
+        favored_courses = Driver.find_driver_and_favored_courses(params[:driver_name].titleize)
         render json: favored_courses.to_json
     end
 
