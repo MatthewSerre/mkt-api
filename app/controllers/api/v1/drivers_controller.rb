@@ -11,12 +11,14 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def favorite_courses
-        favorite_courses = Driver.find_driver_and_favorite_courses(params[:driver_name].titleize, params[:level].to_i)
+        driver = Driver.find_by(name: params[:name].titleize)
+        favorite_courses = driver.favorite_courses(params[:level].to_i)
         render json: favorite_courses.to_json
     end
 
     def favored_courses
-        favored_courses = Driver.find_driver_and_favored_courses(params[:driver_name].titleize)
+        driver = Driver.find_by(name: params[:name].titleize)
+        favored_courses = driver.favored_courses
         render json: favored_courses.to_json
     end
 
