@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_232131) do
+ActiveRecord::Schema.define(version: 2021_05_18_021431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,26 +46,27 @@ ActiveRecord::Schema.define(version: 2021_05_17_232131) do
     t.string "special_skill"
     t.string "debut_tour"
     t.datetime "date_added"
-    t.boolean "has_extended_tongue", default: false
-    t.boolean "has_horns", default: false
-    t.boolean "has_mustache", default: false
-    t.boolean "has_shell", default: false
-    t.boolean "has_three_hairs", default: false
-    t.boolean "is_baby", default: false
-    t.boolean "is_daily_select", default: false
-    t.boolean "is_kong", default: false
-    t.boolean "is_koopaling", default: false
-    t.boolean "wears_crown", default: false
-    t.boolean "wears_dress", default: false
-    t.boolean "wears_earrings", default: false
-    t.boolean "wears_gloves", default: false
-    t.boolean "wears_hat", default: false
-    t.boolean "wears_helment", default: false
-    t.boolean "wears_ribbon", default: false
-    t.boolean "wears_short_sleeves", default: false
-    t.boolean "wears_tie", default: false
+    t.boolean "extended_tongue", default: false
+    t.boolean "horns", default: false
+    t.boolean "mustache", default: false
+    t.boolean "shell", default: false
+    t.boolean "three_hairs", default: false
+    t.boolean "baby", default: false
+    t.boolean "daily_select", default: false
+    t.boolean "kong", default: false
+    t.boolean "koopaling", default: false
+    t.boolean "crown", default: false
+    t.boolean "dress", default: false
+    t.boolean "earrings", default: false
+    t.boolean "gloves", default: false
+    t.boolean "hat", default: false
+    t.boolean "helmet", default: false
+    t.boolean "ribbon", default: false
+    t.boolean "short_sleeves", default: false
+    t.boolean "tie", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "position"
   end
 
 end

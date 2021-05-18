@@ -30,13 +30,13 @@ class Api::V1::CoursesController < ApplicationController
         render json: courses
     end
 
-    def trick
-        courses = Course.where(is_reverse: false, is_trick: true)
+    def reverse_trick
+        courses = Course.where(is_reverse: true, is_trick: true)
         render json: courses
     end
 
-    def reverse_trick
-        courses = Course.where(is_reverse: true, is_trick: true)
+    def trick
+        courses = Course.where(is_reverse: false, is_trick: true)
         render json: courses
     end
 

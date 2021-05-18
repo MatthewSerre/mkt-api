@@ -6,7 +6,7 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def babies
-        drivers = Driver.where(is_baby: true)
+        drivers = Driver.where(baby: true)
         render json: drivers
     end
 
@@ -25,12 +25,12 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def kongs
-        drivers = Driver.where(is_kong: true)
+        drivers = Driver.where(kong: true)
         render json: drivers
     end
 
     def koopalings
-        drivers = Driver.where(is_koopaling: true)
+        drivers = Driver.where(koopaling: true)
         render json: drivers
     end
 
