@@ -1,30 +1,65 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-    function makeApiCall() {
+    function invokeAPI() {
         let request = new XMLHttpRequest();
-        request.open("GET", "/api/v1/drivers/name?driver_name=mario");
+        request.open("GET", "/api/v1/drivers/name?q=mario");
         request.send();
         request.onload = () => {
             let value = JSON.parse(request.response);
-            document.getElementById("json").textContent = JSON.stringify(value, undefined, 2);
+            document.getElementById("result").textContent = JSON.stringify(value, undefined, 2);
         }
+    }
+    function clearAPIResult() {
+        document.getElementById("result").textContent = ""
     }
 </script>
 
 <div class="container">
     <h1>Mario Kart Tour API</h1>
-    <p>Make a test call to return data for Mario.</p>
-    <button type="button" onclick="makeApiCall()">Make API Call</button>
+    <p>Run this code by clicking the button below:</p>
+    <section class="container mx-auto max-w-4xl mb-four">
+        <pre class="language-javascript"><code class="language-javascript">fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario')
+            .then(response => response.json())
+            .then(json => console.log(json))</code></pre>
+    </section>
+    <br />
+    <button type="button" onclick="invokeAPI()">Invoke API</button>
+    <button type="button" onclick="clearAPIResult()">Clear</button>
     <br />
     <br />
-    <pre>
-        <code id="json">
-
-        </code>
-    </pre>
+    <section class="container mx-auto max-w-4xl mb-four">
+        <pre class="language-javascript"><code id="result" class="language-javascript">{}</code></pre>
+    </section>
+    <br />
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><h2>Drivers</h2></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET api/v1/drivers</td>
+            <td>Returns a list of all drivers</td>
+          </tr>
+          <tr>
+            <td>GET api/v1/driver/babies</td>
+            <td>Returns a list of all baby drivers</td>
+          </tr>
+          <tr>
+            <td>GET api/v1/driver/high_end</td>
+            <td>Returns a list of all High-End drivers</td>
+          </tr>
+          <tr>
+            <td>GET api/v1/driver/name?q=</td>
+            <td>Returns the driver with the specified name (e.g. mario, lakitu_(party_time))</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
