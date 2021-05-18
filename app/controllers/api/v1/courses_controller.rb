@@ -11,7 +11,7 @@ class Api::V1::CoursesController < ApplicationController
     end
 
     def name
-        course = Course.find_by(name: params[:q].titleize)
+        course = Course.find_by(name: params[:q])
         render json: course
     end
 

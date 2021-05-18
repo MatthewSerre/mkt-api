@@ -3,63 +3,164 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <script>
-    function invokeAPI() {
-        let request = new XMLHttpRequest();
-        request.open("GET", "/api/v1/drivers/name?q=mario");
-        request.send();
-        request.onload = () => {
-            let value = JSON.parse(request.response);
-            document.getElementById("result").textContent = JSON.stringify(value, undefined, 2);
-        }
-    }
-    function clearAPIResult() {
-        document.getElementById("result").textContent = ""
-    }
+	function invokeAPI() {
+	    let request = new XMLHttpRequest();
+	    request.open("GET", "/api/v1/drivers/name?q=mario");
+	    request.send();
+	    request.onload = () => {
+	        let value = JSON.parse(request.response);
+	        document.getElementById("result").textContent = JSON.stringify(value, undefined, 2);
+	    }
+	}
+	function clearAPIResult() {
+	    document.getElementById("result").textContent = "{}"
+	}
 </script>
-
 <div class="container">
-    <h1>Mario Kart Tour API</h1>
-    <p>Run this code by clicking the button below:</p>
-    <section class="container mx-auto max-w-4xl mb-four">
-        <pre class="language-javascript"><code class="language-javascript">fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario')
+	<h1>Mario Kart Tour API</h1>
+	<p>Run the following code by clicking the Invoke API button below:</p>
+	<section class="container mx-auto max-w-4xl mb-four">
+	    <pre class="language-javascript"><code class="language-javascript">fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario')
             .then(response => response.json())
             .then(json => console.log(json))</code></pre>
-    </section>
-    <br />
-    <button type="button" onclick="invokeAPI()">Invoke API</button>
-    <button type="button" onclick="clearAPIResult()">Clear</button>
-    <br />
-    <br />
-    <section class="container mx-auto max-w-4xl mb-four">
-        <pre class="language-javascript"><code id="result" class="language-javascript">{}</code></pre>
-    </section>
-    <br />
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><h2>Drivers</h2></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>GET api/v1/drivers</td>
-            <td>Returns a list of all drivers</td>
-          </tr>
-          <tr>
-            <td>GET api/v1/driver/babies</td>
-            <td>Returns a list of all baby drivers</td>
-          </tr>
-          <tr>
-            <td>GET api/v1/driver/high_end</td>
-            <td>Returns a list of all High-End drivers</td>
-          </tr>
-          <tr>
-            <td>GET api/v1/driver/name?q=</td>
-            <td>Returns the driver with the specified name (e.g. mario, lakitu_(party_time))</td>
-          </tr>
-        </tbody>
-      </table>
+	</section>
+	<br />
+	<button type="button" onclick="invokeAPI()">Invoke API</button>
+	<button type="button" onclick="clearAPIResult()">Clear</button>
+	<br />
+	<br />
+	<section class="container mx-auto max-w-4xl mb-four">
+		<pre class="language-javascript"><code id="result" class="language-javascript">{}</code></pre>
+	</section>
+	<br />
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">
+					<h2>Drivers</h2>
+				</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="/api/v1/drivers">GET api/v1/drivers</a></td>
+				<td>Returns a list of all drivers</td>
+			</tr>
+			<tr>
+				<td><a href="/api/v1/drivers/babies">GET api/v1/drivers/babies</a></td>
+				<td>Returns a list of all baby drivers</td>
+			</tr>
+			<tr>
+				<td><a href="/api/v1/drivers/high_end">GET api/v1/drivers/high_end</a></td>
+				<td>Returns a list of all High-End drivers</td>
+			</tr>
+			<tr>
+				<td><a href="/api/v1/drivers/kongs">GET api/v1/drivers/kongs</a></td>
+				<td>Returns a list of all Kong drivers</td>
+			</tr>
+			<tr>
+				<td><a href="/api/v1/drivers/koopalings">GET api/v1/drivers/koopalings</a></td>
+				<td>Returns a list of all Koopaling drivers</td>
+			</tr>
+			<tr>
+				<td>GET api/v1/drivers/name?q=</td>
+				<td>Returns the driver with the specified name (e.g. mario, lakitu_(party_time))</td>
+			</tr>
+			<tr>
+				<td>GET api/v1/drivers/name_contains?q=</td>
+				<td>Returns a list of all drivers with a name that contains the specified string (e.g. mario)</td>
+			</tr>
+			<tr>
+				<td><a href="/api/v1/drivers/normal">GET api/v1/drivers/normal</a></td>
+				<td>Returns a list of all Normal drivers</td>
+			</tr>
+			<tr>
+				<td>GET api/v1/drivers/special_skill?q=</td>
+				<td>Returns a list of all drivers with the specified skill (e.g. boomerang_flower, triple_mushrooms)</td>
+			</tr>
+			<tr>
+				<td><a href="/api/v1/drivers/super">GET api/v1/drivers/super</a></td>
+				<td>Returns a list of all Super drivers</td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">
+					<h2>Karts (coming soon...)</h2>
+				</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>GET api/v1/karts</td>
+				<td>Returns a list of all karts</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">
+					<h2>Gliders (coming soon...)</h2>
+				</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>GET api/v1/gliders</td>
+				<td>Returns a list of all gliders</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">
+					<h2>Courses</h2>
+				</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="/api/v1/courses">GET api/v1/courses</a></td>
+				<td>Returns a list of all courses</td>
+			</tr>
+            <tr>
+				<td>GET api/v1/courses/debut_system?q=</td>
+				<td>Returns a list of all courses that debuted in a game on the specified system (e.g. SNES, N64)</td>
+			</tr>
+            <tr>
+				<td>GET api/v1/courses/name?q=</td>
+				<td>Returns the course with the specified name (e.g. Donut Plains 2T (note that casing/spacing matters))</td>
+			</tr>
+            <tr>
+				<td>GET api/v1/courses/name_contains?q=</td>
+				<td>Returns a list of all courses with a name that contains the specified string (e.g. donut)</td>
+			</tr>
+            <tr>
+				<td><a href="/api/v1/courses/normal">GET api/v1/courses/normal</a></td>
+				<td>Returns a list of all normal course variants</td>
+			</tr>
+            <tr>
+				<td><a href="/api/v1/courses/reverse">GET api/v1/courses/reverse</a></td>
+				<td>Returns a list of all reverse course variants</td>
+			</tr>
+            <tr>
+				<td><a href="/api/v1/courses/reverse_trick">GET api/v1/courses/reverse_trick</a></td>
+				<td>Returns a list of all reverse/trick course variants</td>
+			</tr>
+            <tr>
+				<td><a href="/api/v1/courses/trick">GET api/v1/courses/trick</a></td>
+				<td>Returns a list of all trick course variants</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
