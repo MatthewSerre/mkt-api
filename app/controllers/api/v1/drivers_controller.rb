@@ -10,17 +10,14 @@ class Api::V1::DriversController < ApplicationController
         render json: drivers
     end
 
-    def favorite_courses
-        driver = Driver.find_by(name: params[:name].titleize)
-        favorite_courses = driver.favorite_courses(params[:level].to_i)
-        render json: favorite_courses
-    end
-
-    def favored_courses
-        driver = Driver.find_by(name: params[:name].titleize)
-        favored_courses = driver.favored_courses
-        render json: favored_courses
-    end
+    # def characteristic
+    #     characteristics = params[:q].split(',')
+    #     query_string = ""
+    #     characteristics.each do |characteristic|
+    #         query_string += ": true"
+    #     end
+    #     drivers = Driver.where()
+    # end
 
     def high_end
         drivers = Driver.where(rarity: "High-End")
@@ -38,18 +35,23 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def name
-        driver = Driver.find_by(name: params[:driver_name].titleize)
+        driver = Driver.find_by(name: params[:q].titleize)
         render json: driver
     end
 
     def name_contains
-        drivers = Driver.where("name LIKE ?", "%#{params[:driver_name].titleize}%")
+        drivers = Driver.where("name LIKE ?", params[:q].titleize)
         render json: drivers
     end
 
     def normal
         drivers = Driver.where(rarity: "Normal")
         render json: drivers
+    end
+
+    def special_skill
+        driver = Driver.where(special_skill: params[:q].titleize)
+        render json: driver
     end
 
     def super
