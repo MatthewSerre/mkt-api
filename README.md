@@ -5,6 +5,7 @@ Mario Kart Tour API aims to be a robust resource for developers to leverage when
 ## To Do
 
 - Add data/endpoints for karts, gliders, and courses
+- Host images of/add image links for the drivers, driver emblems, karts, gliders, and courses (need to identify the best place to source the files to avoid any infringement)
 - Implement error handling/messages
 - Add throttling/API key system if necessary
 
