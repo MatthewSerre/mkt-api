@@ -36,7 +36,12 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
 csv = CSV.parse(csv_text.scrub, headers: true)
 csv.each do |row|
     c = Course.new
-    c.name = row['name']
+    if /\d+$/.match?(row['name'])
+        c.name = row['name'] + row['suffix'].to_s
+    else
+        c.name = row['name'] + ' ' + row['suffix'].to_s
+    end
+    c.name.strip!
     c.debut_tour = row['debut_tour']
     c.date_added = row['date_added']
     c.debut_game = row['debut_game']
@@ -47,4 +52,4 @@ csv.each do |row|
     puts "#{c.name} saved."
 end
 
-CourseDriverConnection.create(driver_id: Driver.find_by(position: 115).id, course_id: 1, is_favorite: true)
+CourseDriverConnection.create(driver_id: Driver.find_by(position: 115).id, course_id: 202, is_favorite: true)

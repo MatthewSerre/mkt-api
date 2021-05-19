@@ -1,2 +1,223 @@
-name,debut_tour,date_added,debut_game,debut_system,is_reverse,is_trick
-Donut Plains 2T,Cat Tour,2021-01-27,Super Mario Kart,SNES,FALSE,TRUE
+name,suffix,debut_tour,date_added,debut_game,debut_system,is_reverse,is_trick
+3DS Cheep Cheep Lagoon,,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,FALSE
+3DS Cheep Cheep Lagoon,R,New York Tour,2019-09-25,Mario Kart 7,3DS,TRUE,FALSE
+3DS Cheep Cheep Lagoon,T,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,TRUE
+3DS Daisy Hills,,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,FALSE
+3DS Daisy Hills,R,New York Tour,2019-09-25,Mario Kart 7,3DS,TRUE,FALSE
+3DS Daisy Hills,T,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,TRUE
+3DS Rock Rock Mountain,,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,FALSE
+3DS Rock Rock Mountain,R,New York Tour,2019-09-25,Mario Kart 7,3DS,TRUE,FALSE
+3DS Rock Rock Mountain,T,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,TRUE
+3DS Shy Guy Bazaar,,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,FALSE
+3DS Shy Guy Bazaar,R,New York Tour,2019-09-25,Mario Kart 7,3DS,TRUE,FALSE
+3DS Shy Guy Bazaar,T,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,TRUE
+3DS Toad Circuit,,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,FALSE
+3DS Toad Circuit,R,New York Tour,2019-09-25,Mario Kart 7,3DS,TRUE,FALSE
+3DS Toad Circuit,T,New York Tour,2019-09-25,Mario Kart 7,3DS,FALSE,TRUE
+GBA Bowser's Castle 1,,New York Tour,2019-09-25,Mario Kart: Super Circuit,GBA,FALSE,FALSE
+GBA Bowser's Castle 1,R,New York Tour,2019-09-25,Mario Kart: Super Circuit,GBA,TRUE,FALSE
+GBA Bowser's Castle 1,T,New York Tour,2019-09-25,Mario Kart: Super Circuit,GBA,FALSE,TRUE
+GCN Dino Dino Jungle,,New York Tour,2019-09-25,Mario Kart: Double Dash!!,GCN,FALSE,FALSE
+GCN Dino Dino Jungle,R,New York Tour,2019-09-25,Mario Kart: Double Dash!!,GCN,TRUE,FALSE
+GCN Dino Dino Jungle,T,New York Tour,2019-09-25,Mario Kart: Double Dash!!,GCN,FALSE,TRUE
+GCN Yoshi Circuit,,New York Tour,2019-09-25,Mario Kart: Double Dash!!,GCN,FALSE,FALSE
+GCN Yoshi Circuit,R,New York Tour,2019-09-25,Mario Kart: Double Dash!!,GCN,TRUE,FALSE
+GCN Yoshi Circuit,T,New York Tour,2019-09-25,Mario Kart: Double Dash!!,GCN,FALSE,TRUE
+N64 Koopa Troopa Beach,,New York Tour,2019-09-25,Mario Kart 64,N64,FALSE,FALSE
+N64 Koopa Troopa Beach,R,New York Tour,2019-09-25,Mario Kart 64,N64,TRUE,FALSE
+N64 Koopa Troopa Beach,T,New York Tour,2019-09-25,Mario Kart 64,N64,FALSE,TRUE
+New York Minute,,New York Tour,2019-09-25,Mario Kart Tour,Mobile,FALSE,FALSE
+New York Minute,R,New York Tour,2019-09-25,Mario Kart Tour,Mobile,TRUE,FALSE
+New York Minute,T,New York Tour,2019-09-25,Mario Kart Tour,Mobile,FALSE,TRUE
+New York Minute,R/T,New York Tour,2019-09-25,Mario Kart Tour,Mobile,TRUE,TRUE
+SNES Mario Circuit 1,,New York Tour,2019-09-25,Super Mario Kart,SNES,FALSE,FALSE
+SNES Mario Circuit 1,R,New York Tour,2019-09-25,Super Mario Kart,SNES,TRUE,FALSE
+SNES Mario Circuit 1,T,New York Tour,2019-09-25,Super Mario Kart,SNES,FALSE,TRUE
+3DS Mario Circuit,,Tokyo Tour,2019-10-09,Mario Kart 7,3DS,FALSE,FALSE
+3DS Mario Circuit,R,Tokyo Tour,2019-10-09,Mario Kart 7,3DS,TRUE,FALSE
+3DS Mario Circuit,T,Tokyo Tour,2019-10-09,Mario Kart 7,3DS,FALSE,TRUE
+3DS Neo Bowser City,,Tokyo Tour,2019-10-09,Mario Kart 7,3DS,FALSE,FALSE
+3DS Neo Bowser City,R,Tokyo Tour,2019-10-09,Mario Kart 7,3DS,TRUE,FALSE
+3DS Neo Bowser City,T,Tokyo Tour,2019-10-09,Mario Kart 7,3DS,FALSE,TRUE
+N64 Kalimari Desert,,Tokyo Tour,2019-10-09,Mario Kart 64,N64,FALSE,FALSE
+N64 Kalimari Desert,R,Tokyo Tour,2019-10-09,Mario Kart 64,N64,TRUE,FALSE
+N64 Kalimari Desert,T,Tokyo Tour,2019-10-09,Mario Kart 64,N64,FALSE,TRUE
+SNES Choco Island 2,,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,FALSE,FALSE
+SNES Choco Island 2,R,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,TRUE,FALSE
+SNES Choco Island 2,T,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,FALSE,TRUE
+SNES Mario Circuit 2,,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,FALSE,FALSE
+SNES Mario Circuit 2,R,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,TRUE,FALSE
+SNES Mario Circuit 2,T,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,FALSE,TRUE
+SNES Rainbow Road,,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,FALSE,FALSE
+SNES Rainbow Road,R,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,TRUE,FALSE
+SNES Rainbow Road,T,Tokyo Tour,2019-10-09,Super Mario Kart,SNES,FALSE,TRUE
+Tokyo Blur,,Tokyo Tour,2019-10-09,Mario Kart Tour,Mobile,FALSE,FALSE
+Tokyo Blur,R,Tokyo Tour,2019-10-09,Mario Kart Tour,Mobile,TRUE,FALSE
+Tokyo Blur,T,Tokyo Tour,2019-10-09,Mario Kart Tour,Mobile,FALSE,TRUE
+Tokyo Blur,R/T,Tokyo Tour,2019-10-09,Mario Kart Tour,Mobile,TRUE,TRUE
+DS Luigi's Mansion,,Halloween Tour (2019),2019-10-23,Mario Kart DS,DS,FALSE,FALSE
+DS Luigi's Mansion,R,Halloween Tour (2019),2019-10-23,Mario Kart DS,DS,TRUE,FALSE
+DS Luigi's Mansion,T,Halloween Tour (2019),2019-10-23,Mario Kart DS,DS,FALSE,TRUE
+DS Waluigi Pinball,,Halloween Tour (2019),2019-10-23,Mario Kart DS,DS,FALSE,FALSE
+DS Waluigi Pinball,R,Halloween Tour (2019),2019-10-23,Mario Kart DS,DS,TRUE,FALSE
+DS Waluigi Pinball,T,Halloween Tour (2019),2019-10-23,Mario Kart DS,DS,FALSE,TRUE
+SNES Ghost Valley 1,,Halloween Tour (2019),2019-10-23,Super Mario Kart,SNES,FALSE,FALSE
+SNES Ghost Valley 1,R,Halloween Tour (2019),2019-10-23,Super Mario Kart,SNES,TRUE,FALSE
+SNES Ghost Valley 1,T,Halloween Tour (2019),2019-10-23,Super Mario Kart,SNES,FALSE,TRUE
+Paris Promenade,,Paris Tour,2019-11-06,Mario Kart Tour,Mobile,FALSE,FALSE
+Paris Promenade,R,Paris Tour,2019-11-06,Mario Kart Tour,Mobile,TRUE,FALSE
+Paris Promenade,T,Paris Tour,2019-11-06,Mario Kart Tour,Mobile,FALSE,TRUE
+Paris Promenade,R/T,Paris Tour,2019-11-06,Mario Kart Tour,Mobile,TRUE,TRUE
+SNES Mario Circuit 3,,Paris Tour,2019-11-06,Super Mario Kart,SNES,FALSE,FALSE
+SNES Mario Circuit 3,R,Paris Tour,2019-11-06,Super Mario Kart,SNES,TRUE,FALSE
+SNES Mario Circuit 3,T,Paris Tour,2019-11-06,Super Mario Kart,SNES,FALSE,TRUE
+3DS Daisy Hills,R/T,Winter Tour (2019),2019-11-20,Mario Kart 7,3DS,TRUE,TRUE
+3DS Mario Circuit,R/T,Winter Tour (2019),2019-11-20,Mario Kart 7,3DS,TRUE,TRUE
+DS DK Pass,,Winter Tour (2019),2019-11-20,Mario Kart DS,DS,FALSE,FALSE
+DS DK Pass,R,Winter Tour (2019),2019-11-20,Mario Kart DS,DS,TRUE,FALSE
+DS DK Pass,T,Winter Tour (2019),2019-11-20,Mario Kart DS,DS,FALSE,TRUE
+SNES Rainbow Road,R/T,Winter Tour (2019),2019-11-20,Super Mario Kart,SNES,TRUE,TRUE
+DS Luigi's Mansion,R/T,London Tour,2019-12-04,Mario Kart DS,DS,TRUE,TRUE
+GBA Bowser's Castle 1,R/T,London Tour,2019-12-04,Mario Kart: Super Circuit,GBA,TRUE,TRUE
+GCN Yoshi Circuit,R/T,London Tour,2019-12-04,Mario Kart: Double Dash!!,GCN,TRUE,TRUE
+London Loop,,London Tour,2019-12-04,Mario Kart Tour,Mobile,FALSE,FALSE
+London Loop,R,London Tour,2019-12-04,Mario Kart Tour,Mobile,TRUE,FALSE
+London Loop,T,London Tour,2019-12-04,Mario Kart Tour,Mobile,FALSE,TRUE
+London Loop,R/T,London Tour,2019-12-04,Mario Kart Tour,Mobile,TRUE,TRUE
+3DS Cheep Cheep Lagoon,R/T,Holiday Tour,2019-12-18,Mario Kart 7,3DS,TRUE,TRUE
+3DS Rainbow Road,,Holiday Tour,2019-12-18,Mario Kart 7,3DS,FALSE,FALSE
+3DS Rainbow Road,R,Holiday Tour,2019-12-18,Mario Kart 7,3DS,TRUE,FALSE
+3DS Rainbow Road,T,Holiday Tour,2019-12-18,Mario Kart 7,3DS,FALSE,TRUE
+N64 Kalimari Desert,R/T,Holiday Tour,2019-12-18,Mario Kart 64,N64,TRUE,TRUE
+New York Minute 2,,Holiday Tour,2019-12-18,Mario Kart Tour,Mobile,FALSE,FALSE
+New York Minute 2,R,Holiday Tour,2019-12-18,Mario Kart Tour,Mobile,TRUE,FALSE
+New York Minute 2,T,Holiday Tour,2019-12-18,Mario Kart Tour,Mobile,FALSE,TRUE
+New York Minute 2,R/T,Holiday Tour,2019-12-18,Mario Kart Tour,Mobile,TRUE,TRUE
+SNES Mario Circuit 1,R/T,Holiday Tour,2019-12-18,Super Mario Kart,SNES,TRUE,TRUE
+3DS Neo Bowser City,R/T,New Year's Tour,2020-01-01,Mario Kart 7,3DS,TRUE,TRUE
+3DS Toad Circuit,R/T,New Year's Tour,2020-01-01,Mario Kart 7,3DS,TRUE,TRUE
+SNES Mario Circuit 2,R/T,New Year's Tour,2020-01-01,Super Mario Kart,SNES,TRUE,TRUE
+Tokyo Blur 2,,New Year's Tour,2020-01-01,Mario Kart Tour,Mobile,FALSE,FALSE
+Tokyo Blur 2,R,New Year's Tour,2020-01-01,Mario Kart Tour,Mobile,TRUE,FALSE
+Tokyo Blur 2,T,New Year's Tour,2020-01-01,Mario Kart Tour,Mobile,FALSE,TRUE
+Tokyo Blur 2,R/T,New Year's Tour,2020-01-01,Mario Kart Tour,Mobile,TRUE,TRUE
+3DS Shy Guy Bazaar,R/T,Ice Tour,2020-01-15,Mario Kart 7,3DS,TRUE,TRUE
+DS DK Pass,R/T,Ice Tour,2020-01-15,Mario Kart DS,DS,TRUE,TRUE
+N64 Frappe Snowland,,Ice Tour,2020-01-15,Mario Kart 64,N64,FALSE,FALSE
+N64 Frappe Snowland,R,Ice Tour,2020-01-15,Mario Kart 64,N64,TRUE,FALSE
+N64 Frappe Snowland,T,Ice Tour,2020-01-15,Mario Kart 64,N64,FALSE,TRUE
+SNES Choco Island 2,R/T,Ice Tour,2020-01-15,Super Mario Kart,SNES,TRUE,TRUE
+SNES Vanilla Lake 1,,Ice Tour,2020-01-15,Super Mario Kart,SNES,FALSE,FALSE
+SNES Vanilla Lake 1,R,Ice Tour,2020-01-15,Super Mario Kart,SNES,TRUE,FALSE
+SNES Vanilla Lake 1,T,Ice Tour,2020-01-15,Super Mario Kart,SNES,FALSE,TRUE
+DS Waluigi Pinball,R/T,Valentine's Tour,2020-01-29,Mario Kart DS,DS,TRUE,TRUE
+GCN Dino Dino Jungle,R/T,Valentine's Tour,2020-01-29,Mario Kart: Double Dash!!,GCN,TRUE,TRUE
+Paris Promenade 2,,Valentine's Tour,2020-01-29,Mario Kart Tour,Mobile,FALSE,FALSE
+Paris Promenade 2,R,Valentine's Tour,2020-01-29,Mario Kart Tour,Mobile,TRUE,FALSE
+Paris Promenade 2,T,Valentine's Tour,2020-01-29,Mario Kart Tour,Mobile,FALSE,TRUE
+Paris Promenade 2,R/T,Valentine's Tour,2020-01-29,Mario Kart Tour,Mobile,TRUE,TRUE
+SNES Ghost Valley 1,R/T,Valentine's Tour,2020-01-29,Super Mario Kart,SNES,TRUE,TRUE
+N64 Frappe Snowland,R/T,Vancouver Tour,2020-02-12,Mario Kart 64,N64,TRUE,TRUE
+N64 Koopa Troopa Beach,R/T,Vancouver Tour,2020-02-12,Mario Kart 64,N64,TRUE,TRUE
+SNES Mario Circuit 3,R/T,Vancouver Tour,2020-02-12,Super Mario Kart,SNES,TRUE,TRUE
+Vancouver Velocity,,Vancouver Tour,2020-02-12,Mario Kart Tour,Mobile,FALSE,FALSE
+Vancouver Velocity,R,Vancouver Tour,2020-02-12,Mario Kart Tour,Mobile,TRUE,FALSE
+Vancouver Velocity,T,Vancouver Tour,2020-02-12,Mario Kart Tour,Mobile,FALSE,TRUE
+Vancouver Velocity,R/T,Vancouver Tour,2020-02-12,Mario Kart Tour,Mobile,TRUE,TRUE
+RMX Mario Circuit 1,,Mario Bros. Tour,2020-02-26,Mario Kart Tour,Mobile,FALSE,FALSE
+RMX Mario Circuit 1,R,Mario Bros. Tour,2020-02-26,Mario Kart Tour,Mobile,TRUE,FALSE
+RMX Mario Circuit 1,T,Mario Bros. Tour,2020-02-26,Mario Kart Tour,Mobile,FALSE,TRUE
+3DS Rainbow Road,R/T,Baby Rosalina Tour,2020-03-11,Mario Kart 7,3DS,TRUE,TRUE
+London Loop 2,,Baby Rosalina Tour,2020-03-11,Mario Kart Tour,Mobile,FALSE,FALSE
+London Loop 2,R,Baby Rosalina Tour,2020-03-11,Mario Kart Tour,Mobile,TRUE,FALSE
+London Loop 2,T,Baby Rosalina Tour,2020-03-11,Mario Kart Tour,Mobile,FALSE,TRUE
+London Loop 2,R/T,Baby Rosalina Tour,2020-03-11,Mario Kart Tour,Mobile,TRUE,TRUE
+GBA Bowser's Castle 2,,Hammer Bro Tour,2020-03-25,Mario Kart: Super Circuit,GBA,FALSE,FALSE
+GBA Bowser's Castle 2,R,Hammer Bro Tour,2020-03-25,Mario Kart: Super Circuit,GBA,TRUE,FALSE
+GBA Bowser's Castle 2,T,Hammer Bro Tour,2020-03-25,Mario Kart: Super Circuit,GBA,FALSE,TRUE
+SNES Donut Plains 1,,Hammer Bro Tour,2020-03-25,Super Mario Kart,SNES,FALSE,FALSE
+SNES Donut Plains 1,R,Hammer Bro Tour,2020-03-25,Super Mario Kart,SNES,TRUE,FALSE
+SNES Donut Plains 1,T,Hammer Bro Tour,2020-03-25,Super Mario Kart,SNES,FALSE,TRUE
+RMX Mario Circuit 1,R/T,Yoshi Tour (2020),2020-04-08,Mario Kart Tour,Mobile,TRUE,TRUE
+SNES Donut Plains 1,R/T,Yoshi Tour (2020),2020-04-08,Super Mario Kart,SNES,TRUE,TRUE
+GBA Bowser's Castle 2,R/T,Trick Tour (2020),2020-04-22,Mario Kart: Super Circuit,GBA,TRUE,TRUE
+SNES Vanilla Lake 1,R/T,Trick Tour (2020),2020-04-22,Super Mario Kart,SNES,TRUE,TRUE
+RMX Choco Island 1,,Flower Tour,2020-05-06,Mario Kart Tour,Mobile,FALSE,FALSE
+RMX Choco Island 1,R,Flower Tour,2020-05-06,Mario Kart Tour,Mobile,TRUE,FALSE
+RMX Choco Island 1,T,Flower Tour,2020-05-06,Mario Kart Tour,Mobile,FALSE,TRUE
+SNES Choco Island 1,,Cooking Tour,2020-06-03,Super Mario Kart,SNES,FALSE,FALSE
+SNES Choco Island 1,R,Cooking Tour,2020-06-03,Super Mario Kart,SNES,TRUE,FALSE
+SNES Choco Island 1,T,Cooking Tour,2020-06-03,Super Mario Kart,SNES,FALSE,TRUE
+N64 Royal Raceway,,Peach Tour,2020-06-17,Mario Kart 64,N64,FALSE,FALSE
+N64 Royal Raceway,R,Peach Tour,2020-06-17,Mario Kart 64,N64,TRUE,FALSE
+N64 Royal Raceway,T,Peach Tour,2020-06-17,Mario Kart 64,N64,FALSE,TRUE
+SNES Koopa Troopa Beach 2,,Marine Tour,2020-07-01,Super Mario Kart,SNES,FALSE,FALSE
+SNES Koopa Troopa Beach 2,R,Marine Tour,2020-07-01,Super Mario Kart,SNES,TRUE,FALSE
+SNES Koopa Troopa Beach 2,T,Marine Tour,2020-07-01,Super Mario Kart,SNES,FALSE,TRUE
+N64 Choco Mountain,,Exploration Tour,2020-07-15,Mario Kart 64,N64,FALSE,FALSE
+N64 Choco Mountain,R,Exploration Tour,2020-07-15,Mario Kart 64,N64,TRUE,FALSE
+N64 Choco Mountain,T,Exploration Tour,2020-07-15,Mario Kart 64,N64,FALSE,TRUE
+N64 Kalimari Desert 2,,Wild West Tour,2020-07-29,Mario Kart 64,N64,FALSE,FALSE
+N64 Kalimari Desert 2,R,Wild West Tour,2020-07-29,Mario Kart 64,N64,TRUE,FALSE
+N64 Kalimari Desert 2,T,Wild West Tour,2020-07-29,Mario Kart 64,N64,FALSE,TRUE
+DS Airship Fortress,,Pirate Tour,2020-08-12,Mario Kart DS,DS,FALSE,FALSE
+DS Airship Fortress,R,Pirate Tour,2020-08-12,Mario Kart DS,DS,TRUE,FALSE
+DS Airship Fortress,T,Pirate Tour,2020-08-12,Mario Kart DS,DS,FALSE,TRUE
+Tokyo Blur 3,,Summer Festival Tour,2020-08-26,Mario Kart Tour,Mobile,FALSE,FALSE
+Tokyo Blur 3,R,Summer Festival Tour,2020-08-26,Mario Kart Tour,Mobile,TRUE,FALSE
+Tokyo Blur 3,T,Summer Festival Tour,2020-08-26,Mario Kart Tour,Mobile,FALSE,TRUE
+RMX Rainbow Road 1,,Super Mario Kart Tour,2020-09-09,Mario Kart Tour,Mobile,FALSE,FALSE
+RMX Rainbow Road 1,R,Super Mario Kart Tour,2020-09-09,Mario Kart Tour,Mobile,TRUE,FALSE
+RMX Rainbow Road 1,T,Super Mario Kart Tour,2020-09-09,Mario Kart Tour,Mobile,FALSE,TRUE
+Los Angeles Laps,,Los Angeles Tour,2020-09-23,Mario Kart Tour,Mobile,FALSE,FALSE
+Los Angeles Laps,R,Los Angeles Tour,2020-09-23,Mario Kart Tour,Mobile,TRUE,FALSE
+Los Angeles Laps,T,Los Angeles Tour,2020-09-23,Mario Kart Tour,Mobile,FALSE,TRUE
+Los Angeles Laps,R/T,Los Angeles Tour,2020-09-23,Mario Kart Tour,Mobile,TRUE,TRUE
+New York Minute 3,,1st Anniversary Tour,2020-10-07,Mario Kart Tour,Mobile,FALSE,FALSE
+New York Minute 3,R,1st Anniversary Tour,2020-10-07,Mario Kart Tour,Mobile,TRUE,FALSE
+New York Minute 3,T,1st Anniversary Tour,2020-10-07,Mario Kart Tour,Mobile,FALSE,TRUE
+New York Minute 3,R/T,1st Anniversary Tour,2020-10-07,Mario Kart Tour,Mobile,TRUE,TRUE
+Wii Maple Treeway,,Halloween Tour (2020),2020-10-21,Mario Kart Wii,Wii,FALSE,FALSE
+Wii Maple Treeway,R,Halloween Tour (2020),2020-10-21,Mario Kart Wii,Wii,TRUE,FALSE
+Wii Maple Treeway,T,Halloween Tour (2020),2020-10-21,Mario Kart Wii,Wii,FALSE,TRUE
+GBA Sunset Wilds,,Sunset Tour,2020-11-04,Mario Kart: Super Circuit,GBA,FALSE,FALSE
+GBA Sunset Wilds,R,Sunset Tour,2020-11-04,Mario Kart: Super Circuit,GBA,TRUE,FALSE
+GBA Sunset Wilds,T,Sunset Tour,2020-11-04,Mario Kart: Super Circuit,GBA,FALSE,TRUE
+GBA Sunset Wilds,R/T,Mario vs. Luigi Tour,2020-11-18,Mario Kart: Super Circuit,GBA,TRUE,TRUE
+RMX Rainbow Road 1,R/T,Mario vs. Luigi Tour,2020-11-18,Mario Kart Tour,Mobile,TRUE,TRUE
+Merry Mountain,,Winter Tour (2020),2020-12-02,Mario Kart Tour,Mobile,FALSE,FALSE
+Merry Mountain,R,Winter Tour (2020),2020-12-02,Mario Kart Tour,Mobile,TRUE,FALSE
+Merry Mountain,T,Winter Tour (2020),2020-12-02,Mario Kart Tour,Mobile,FALSE,TRUE
+3DS Rosalina's Ice World,,Rosalina Tour,2020-12-16,Mario Kart 7,3DS,FALSE,FALSE
+3DS Rosalina's Ice World,R,Rosalina Tour,2020-12-16,Mario Kart 7,3DS,TRUE,FALSE
+3DS Rosalina's Ice World,T,Rosalina Tour,2020-12-16,Mario Kart 7,3DS,FALSE,TRUE
+RMX Rainbow Road 2,,New Year's 2021 Tour,2020-12-30,Mario Kart Tour,Mobile,FALSE,FALSE
+RMX Rainbow Road 2,R,New Year's 2021 Tour,2020-12-30,Mario Kart Tour,Mobile,TRUE,FALSE
+RMX Rainbow Road 2,T,New Year's 2021 Tour,2020-12-30,Mario Kart Tour,Mobile,FALSE,TRUE
+Berlin Byways 2,,Berlin Tour,2021-01-13,Mario Kart Tour,Mobile,FALSE,FALSE
+Berlin Byways 2,R,Berlin Tour,2021-01-13,Mario Kart Tour,Mobile,TRUE,FALSE
+Berlin Byways 2,T,Berlin Tour,2021-01-13,Mario Kart Tour,Mobile,FALSE,TRUE
+Berlin Byways 2,R/T,Berlin Tour,2021-01-13,Mario Kart Tour,Mobile,TRUE,TRUE
+SNES Donut Plains 2,,Cat Tour,2021-01-27,Super Mario Kart,SNES,FALSE,FALSE
+SNES Donut Plains 2,R,Cat Tour,2021-01-27,Super Mario Kart,SNES,TRUE,FALSE
+SNES Donut Plains 2,T,Cat Tour,2021-01-27,Super Mario Kart,SNES,FALSE,TRUE
+RMX Choco Island 2,,Peach vs. Daisy Tour,2021-02-10,Mario Kart Tour,Mobile,FALSE,FALSE
+RMX Choco Island 2,R,Peach vs. Daisy Tour,2021-02-10,Mario Kart Tour,Mobile,TRUE,FALSE
+RMX Choco Island 2,T,Peach vs. Daisy Tour,2021-02-10,Mario Kart Tour,Mobile,FALSE,TRUE
+Wii DK Summit,,Snow Tour,2021-02-24,Mario Kart Wii,Wii,FALSE,FALSE
+Wii DK Summit,R,Snow Tour,2021-02-24,Mario Kart Wii,Wii,TRUE,FALSE
+Wii DK Summit,T,Snow Tour,2021-02-24,Mario Kart Wii,Wii,FALSE,TRUE
+Tokyo Blur 4,,Mario Tour,2021-03-10,Mario Kart Tour,Mobile,FALSE,FALSE
+Tokyo Blur 4,R,Mario Tour,2021-03-10,Mario Kart Tour,Mobile,TRUE,FALSE
+Tokyo Blur 4,T,Mario Tour,2021-03-10,Mario Kart Tour,Mobile,FALSE,TRUE
+Tokyo Blur 4,R/T,Mario Tour,2021-03-10,Mario Kart Tour,Mobile,TRUE,TRUE
+N64 Royal Raceway,R/T,Yoshi Tour (2021),2021-03-24,Mario Kart 64,N64,TRUE,TRUE
+SNES Donut Plains 2,R/T,Yoshi Tour (2021),2021-03-24,Super Mario Kart,SNES,TRUE,TRUE
+Ninja Hideaway,,Ninja Tour,2021-04-07,Mario Kart Tour,Mobile,FALSE,FALSE
+Ninja Hideaway,R,Ninja Tour,2021-04-07,Mario Kart Tour,Mobile,TRUE,FALSE
+Ninja Hideaway,T,Ninja Tour,2021-04-07,Mario Kart Tour,Mobile,FALSE,TRUE
+Sydney Sprint,,Sydney Tour,2021-04-21,Mario Kart Tour,Mobile,FALSE,FALSE
+Sydney Sprint,R,Sydney Tour,2021-04-21,Mario Kart Tour,Mobile,TRUE,FALSE
+Sydney Sprint,T,Sydney Tour,2021-04-21,Mario Kart Tour,Mobile,FALSE,TRUE
+Sydney Sprint,R/T,Sydney Tour,2021-04-21,Mario Kart Tour,Mobile,TRUE,TRUE
+RMX Choco Island 1,R/T,Trick Tour (2021),2021-05-19,Mario Kart Tour,Mobile,TRUE,TRUE
