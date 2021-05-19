@@ -6,3 +6,5 @@ Mario Kart Tour API aims to be a robust resource for developers to leverage when
 
 - Add data/endpoints for karts, gliders, and courses
 - Implement error handling/messages
+
+Please contact me if you would be willing to help with gathering/inputting data to seed the databases!
