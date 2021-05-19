@@ -23,7 +23,7 @@ class Driver < ApplicationRecord
             course = Course.find(connection.course.id)
             favorite_courses << course
         end
-        favorite_courses.sort_by {|obj| obj.id}
+        favorite_courses.sort_by {|obj| obj.name}
     end
 
     def favored_courses
@@ -33,6 +33,6 @@ class Driver < ApplicationRecord
             course = Course.find(connection.course.id)
             favorite_courses << course
         end
-        favored_courses.sort_by {|obj| obj.id}
+        favored_courses.sort_by {|obj| obj.name}
     end
 end
