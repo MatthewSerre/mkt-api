@@ -9,4 +9,4 @@ Mario Kart Tour API aims to be a robust resource for developers to leverage when
 - Implement error handling/messages
 - Add throttling/API key system if necessary
 
-Please contact me if you would be willing to help with gathering/inputting data to seed the databases!
+Please contact me if you would be willing to help with gathering/inputting data to seed the database!
