@@ -52,4 +52,18 @@ csv.each do |row|
     puts "#{c.name} saved."
 end
 
-CourseDriverConnection.create(driver_id: Driver.find_by(position: 115).id, course_id: 202, is_favorite: true)
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'coursedriverconnections.csv'))
+csv = CSV.parse(csv_text.scrub, headers: true)
+csv.each do |row|
+    cdc = CourseDriverConnection.new
+    if !row['base'].nil?
+        driver = Driver.find_by(name: row['name'])
+        courses = Course.where("name LIKE ?", "%" + row['base']  + "%")
+        course = courses[0]
+        cdc.driver_id = driver.id
+        cdc.course_id = course.id
+        cdc.is_favorite = true
+        cdc.save
+        puts "#{driver.name}/#{course.name} connection saved."
+    end
+end
