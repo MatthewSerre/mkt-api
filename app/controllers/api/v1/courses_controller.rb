@@ -6,7 +6,7 @@ class Api::V1::CoursesController < ApplicationController
     end
 
     def debut_system
-        courses = Course.where(debut_system: params[:q].titleize)
+        courses = Course.where(debut_system: params[:q].downcase == "mobile" ? params[:q].titleize : params[:q].upcase)
         render json: courses
     end
 
