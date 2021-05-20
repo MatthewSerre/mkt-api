@@ -65,5 +65,23 @@ csv.each do |row|
         cdc.is_favorite = true
         cdc.save
         puts "#{driver.name}/#{course.name} connection saved."
+    elsif !row['level3'].nil?
+        driver = Driver.find_by(name: row['name'])
+        courses = Course.where("name LIKE ?", "%" + row['level3']  + "%")
+        course = courses[0]
+        cdc.driver_id = driver.id
+        cdc.course_id = course.id
+        cdc.is_favorite_at_level_3 = true
+        cdc.save
+        puts "#{driver.name}/#{course.name} connection saved."
+    elsif !row['level6'].nil?
+        driver = Driver.find_by(name: row['name'])
+        courses = Course.where("name LIKE ?", "%" + row['level6']  + "%")
+        course = courses[0]
+        cdc.driver_id = driver.id
+        cdc.course_id = course.id
+        cdc.is_favorite_at_level_6 = true
+        cdc.save
+        puts "#{driver.name}/#{course.name} connection saved."
     end
 end
