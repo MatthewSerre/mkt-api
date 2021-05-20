@@ -7,11 +7,17 @@ class Course < ApplicationRecord
     def top_shelf_driver_names(level = 0)
         case level
         when 6..7
-            connections = CourseDriverConnection.where(course_id: self.id, is_favorite_at_level_6: true)
+            connections = Rails.cache.fetch("top_shelf_driver_names_level_6", :expires_in => 24.hours) do
+                CourseDriverConnection.where(course_id: self.id, is_favorite_at_level_6: true)
+            end
         when 3..5
-            connections = CourseDriverConnection.where(course_id: self.id, is_favorite_at_level_3: true)
+            connections = Rails.cache.fetch("top_shelf_driver_names_level_3", :expires_in => 24.hours) do
+                CourseDriverConnection.where(course_id: self.id, is_favorite_at_level_3: true)
+            end
         when 1..2
-            connections = CourseDriverConnection.where(course_id: self.id, is_favorite: true)
+            connections = Rails.cache.fetch("top_shelf_driver_names_base", :expires_in => 24.hours) do
+                CourseDriverConnection.where(course_id: self.id, is_favorite: true)
+            end
         else
             level_6 = CourseDriverConnection.where(course_id: self.id, is_favorite_at_level_6: true)
             level_3 = CourseDriverConnection.where(course_id: self.id, is_favorite_at_level_3: true)
