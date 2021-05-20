@@ -16,7 +16,7 @@ class Api::V1::CoursesController < ApplicationController
     end
 
     def name_contains
-        courses = Course.where("name LIKE ?", params[:q].titleize)
+        courses = Course.where("name LIKE ?", "%" + params[:q].titleize + "%")
         render json: courses
     end
 
