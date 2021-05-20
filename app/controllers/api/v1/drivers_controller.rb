@@ -40,7 +40,7 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def name_contains
-        drivers = Driver.where("name LIKE ?", params[:q].titleize)
+        drivers = Driver.where("name LIKE ?", "%" + params[:q].titleize + "%")
         render json: drivers
     end
 
