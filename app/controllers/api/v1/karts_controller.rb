@@ -12,8 +12,8 @@ class Api::V1::KartsController < ApplicationController
     end
 
     def name
-        course = Kart.find_by(name: params[:q])
-        render json: course
+        kart = Kart.find_by(name: params[:q])
+        render json: !kart.nil? ? kart : []
     end
 
     def name_contains
@@ -27,8 +27,8 @@ class Api::V1::KartsController < ApplicationController
     end
 
     def special_skill
-        driver = Kart.where(special_skill: params[:q].titleize)
-        render json: driver
+        kart = Kart.where(special_skill: params[:q].titleize)
+        render json: kart
     end
 
     def super

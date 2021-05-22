@@ -13,7 +13,7 @@ class Api::V1::CoursesController < ApplicationController
 
     def name
         course = Course.find_by(name: params[:q])
-        render json: course
+        render json: !course.nil? ? course : []
     end
 
     def name_contains

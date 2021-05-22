@@ -29,7 +29,7 @@ class Api::V1::DriversController < ApplicationController
 
     def name
         driver = Driver.find_by(name: params[:q].titleize)
-        render json: driver
+        render json: !driver.nil? ? driver : []
     end
 
     def name_contains
@@ -54,7 +54,7 @@ class Api::V1::DriversController < ApplicationController
 
     def test
         driver = Driver.find_by(name: "Mario")
-        render json: driver
+        render json: !driver.nil? ? driver : []
     end
 
 end
