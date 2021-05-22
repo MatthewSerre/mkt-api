@@ -1,5 +1,6 @@
 class Api::V1::DriversController < ApplicationController
     include Secured
+    skip_before_action :authenticate_request!, only: [:test]
 
     def index
         drivers = Driver.all
@@ -58,6 +59,11 @@ class Api::V1::DriversController < ApplicationController
     def super
         drivers = Driver.where(rarity: "Super")
         render json: drivers
+    end
+
+    def test
+        driver = Driver.find_by(name: "Mario")
+        render json: driver
     end
 
 end

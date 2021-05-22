@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'api/v1/drivers/normal', :to => 'api/v1/drivers#normal'
   get 'api/v1/drivers/special_skill', :to => 'api/v1/drivers#special_skill'
   get 'api/v1/drivers/super', :to => 'api/v1/drivers#super'
+  get 'api/v1/drivers/test', :to => 'api/v1/drivers#test'
   
   namespace :api do
     namespace :v1 do

@@ -13,7 +13,7 @@ module Secured
     def authenticate_request!
       auth_token
     rescue JWT::VerificationError, JWT::DecodeError
-      render json: { errors: ['Unauthorized. Please provide a valid authentication token.'] }, status: :unauthorized
+      render json: { errors: ['Unauthorized. Please provide a valid authorization token.'] }, status: :unauthorized
     end
    
     def http_token
