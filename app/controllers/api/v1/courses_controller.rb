@@ -1,4 +1,5 @@
 class Api::V1::CoursesController < ApplicationController
+    include Secured
 
     def index
         courses = Course.all
