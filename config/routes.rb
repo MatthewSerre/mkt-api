@@ -19,8 +19,6 @@ Rails.application.routes.draw do
 
   # Driver routes
   get 'api/v1/drivers/babies', :to => 'api/v1/drivers#babies'
-  get 'api/v1/drivers/favorite_courses', :to => 'api/v1/drivers#favorite_courses'
-  get 'api/v1/drivers/favored_courses', :to => 'api/v1/drivers#favored_courses'
   get 'api/v1/drivers/high_end', :to => 'api/v1/drivers#high_end'
   get 'api/v1/drivers/kongs', :to => 'api/v1/drivers#kongs'
   get 'api/v1/drivers/koopalings', :to => 'api/v1/drivers#koopalings'
@@ -34,6 +32,20 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :drivers, only: [:index]
+    end
+  end
+
+  # Kart routes
+  get 'api/v1/karts/high_end', :to => 'api/v1/karts#high_end'
+  get 'api/v1/karts/name', :to => 'api/v1/karts#name'
+  get 'api/v1/karts/name_contains', :to => 'api/v1/karts#name_contains'
+  get 'api/v1/karts/normal', :to => 'api/v1/karts#normal'
+  get 'api/v1/karts/special_skill', :to => 'api/v1/karts#special_skill'
+  get 'api/v1/karts/super', :to => 'api/v1/karts#super'
+  
+  namespace :api do
+    namespace :v1 do
+      resources :karts, only: [:index]
     end
   end
 
