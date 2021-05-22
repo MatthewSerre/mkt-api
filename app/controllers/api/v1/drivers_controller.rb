@@ -1,5 +1,5 @@
 class Api::V1::DriversController < ApplicationController
-    # include Secured
+    include Secured
 
     def index
         drivers = Driver.all

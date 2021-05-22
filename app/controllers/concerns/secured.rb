@@ -23,7 +23,6 @@ module Secured
     end
    
     def auth_token
-        binding.pry
       JsonWebToken.verify(http_token)
     end
   end
