@@ -1,9 +1,9 @@
 class Api::V1::CoursesController < ApplicationController
-    # include Secured
+    include Secured
 
     def index
         courses = Course.all
-        render json: courses
+        render json: courses, status: 401
     end
 
     def debut_system
