@@ -12,15 +12,6 @@ class Api::V1::DriversController < ApplicationController
         render json: drivers
     end
 
-    # def characteristic
-    #     characteristics = params[:q].split(',')
-    #     query_string = ""
-    #     characteristics.each do |characteristic|
-    #         query_string += ": true"
-    #     end
-    #     drivers = Driver.where()
-    # end
-
     def high_end
         drivers = Driver.where(rarity: "High-End")
         render json: drivers

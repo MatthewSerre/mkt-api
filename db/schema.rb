@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_021431) do
+ActiveRecord::Schema.define(version: 2021_05_22_193212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 2021_05_18_021431) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "debut_system"
+    t.text "top_shelf_drivers_base", default: [], array: true
+    t.text "top_shelf_drivers_level_3", default: [], array: true
+    t.text "top_shelf_drivers_level_6", default: [], array: true
+    t.text "mid_shelf_drivers", default: [], array: true
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -67,6 +71,10 @@ ActiveRecord::Schema.define(version: 2021_05_18_021431) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
+    t.text "favorite_courses_base", default: [], array: true
+    t.text "favorite_courses_level_3", default: [], array: true
+    t.text "favorite_courses_level_6", default: [], array: true
+    t.text "favored_courses", default: [], array: true
   end
 
 end
