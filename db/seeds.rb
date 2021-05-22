@@ -75,6 +75,27 @@ csv.each do |row|
     end
 end
 
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'karts.csv'))
+csv = CSV.parse(csv_text.scrub, headers: true)
+csv.each do |row|
+    begin
+        k = Kart.find_or_create_by(name: row['name'])
+        k.position = row['position']
+        k.rarity = row['rarity']
+        k.special_skill = row['special_skill']
+        k.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
+        k.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
+        k.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
+        k.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
+        k.debut_tour = row['debut_tour']
+        k.date_added = row['date_added']
+        k.save
+        puts "#{k.name} saved."
+    rescue => e
+        puts "#{e.class.name}: #{e.message}"
+    end
+end
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
 csv = CSV.parse(csv_text.scrub, headers: true)
 csv.each do |row|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :karts
   root to: 'home#index'
 
   # Course routes 

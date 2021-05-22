@@ -1,0 +1,2 @@
+class Kart < ApplicationRecord
+end

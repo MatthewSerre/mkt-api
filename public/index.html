@@ -130,11 +130,12 @@ fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario', {
 				</tbody>
 			</table>
 			<br />
+
 			<table class="table">
 				<thead>
 					<tr>
 						<th scope="col">
-							<h2>Karts (coming soon...)</h2>
+							<h2>Karts</h2>
 						</th>
 						<th scope="col"></th>
 					</tr>
@@ -142,10 +143,35 @@ fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario', {
 				<tbody>
 					<tr>
 						<td>GET api/v1/karts</td>
-						<td>Returns a list of all karts</td>
+						<td>Returns a list of all karts (data still being added)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/karts/high_end</a></td>
+						<td>Returns a list of all High-End karts</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/karts/name?q=</td>
+						<td>Returns the kart with the specified name (e.g. daytripper, green_kiddie_kart)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/karts/name_contains?q=</td>
+						<td>Returns a list of all karts with a name that contains the specified string (e.g. egg)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/karts/normal</td>
+						<td>Returns a list of all Normal karts</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/karts/special_skill?q=</td>
+						<td>Returns a list of all karts with the specified skill (e.g. slipstream_plus, jump_boost_plus)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/karts/super</a></td>
+						<td>Returns a list of all Super karts</td>
 					</tr>
 				</tbody>
 			</table>
+
 			<table class="table">
 				<thead>
 					<tr>

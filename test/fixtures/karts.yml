@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rarity: MyString
+  special_skill: MyString
+  favorite_courses_base: MyText
+  favorite_courses_level_3: MyText
+  favorite_courses_level_6: MyText
+  favored_courses: MyText
+  is_daily_select: false
+
+two:
+  name: MyString
+  rarity: MyString
+  special_skill: MyString
+  favorite_courses_base: MyText
+  favorite_courses_level_3: MyText
+  favorite_courses_level_6: MyText
+  favored_courses: MyText
+  is_daily_select: false

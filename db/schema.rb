@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_193212) do
+ActiveRecord::Schema.define(version: 2021_05_22_223955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 2021_05_22_193212) do
     t.text "top_shelf_drivers_level_3", default: [], array: true
     t.text "top_shelf_drivers_level_6", default: [], array: true
     t.text "mid_shelf_drivers", default: [], array: true
+    t.text "top_shelf_karts_base", default: [], array: true
+    t.text "top_shelf_karts_level_3", default: [], array: true
+    t.text "top_shelf_karts_level_6", default: [], array: true
+    t.text "mid_shelf_karts", default: [], array: true
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -75,6 +79,22 @@ ActiveRecord::Schema.define(version: 2021_05_22_193212) do
     t.text "favorite_courses_level_3", default: [], array: true
     t.text "favorite_courses_level_6", default: [], array: true
     t.text "favored_courses", default: [], array: true
+  end
+
+  create_table "karts", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "special_skill"
+    t.text "favorite_courses_base", default: [], array: true
+    t.text "favorite_courses_level_3", default: [], array: true
+    t.text "favorite_courses_level_6", default: [], array: true
+    t.text "favored_courses", default: [], array: true
+    t.boolean "is_daily_select"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "position"
+    t.datetime "date_added"
+    t.string "debut_tour"
   end
 
 end
