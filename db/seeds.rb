@@ -96,6 +96,27 @@ csv.each do |row|
     end
 end
 
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'gliders.csv'))
+csv = CSV.parse(csv_text.scrub, headers: true)
+csv.each do |row|
+    begin
+        g = Glider.find_or_create_by(name: row['name'])
+        g.position = row['position']
+        g.rarity = row['rarity']
+        g.special_skill = row['special_skill']
+        g.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
+        g.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
+        g.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
+        g.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
+        g.debut_tour = row['debut_tour']
+        g.date_added = row['date_added']
+        g.save
+        puts "#{g.name} saved."
+    rescue => e
+        puts "#{e.class.name}: #{e.message}"
+    end
+end
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
 csv = CSV.parse(csv_text.scrub, headers: true)
 csv.each do |row|

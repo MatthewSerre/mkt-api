@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :karts
+  resources :gliders
   root to: 'home#index'
+
+  namespace :api do
+    namespace :v1 do
+      resources :courses, :drivers, :karts, :gliders, only: [:index]
+    end
+  end
 
   # Course routes 
   get 'api/v1/courses/debut_system', :to => 'api/v1/courses#debut_system'
@@ -10,12 +16,6 @@ Rails.application.routes.draw do
   get 'api/v1/courses/reverse', :to => 'api/v1/courses#reverse'
   get 'api/v1/courses/reverse_trick', :to => 'api/v1/courses#reverse_trick'
   get 'api/v1/courses/trick', :to => 'api/v1/courses#trick'
-
-  namespace :api do
-    namespace :v1 do
-      resources :courses, only: [:index]
-    end
-  end
 
   # Driver routes
   get 'api/v1/drivers/babies', :to => 'api/v1/drivers#babies'
@@ -29,12 +29,6 @@ Rails.application.routes.draw do
   get 'api/v1/drivers/super', :to => 'api/v1/drivers#super'
   get 'api/v1/drivers/test', :to => 'api/v1/drivers#test'
   
-  namespace :api do
-    namespace :v1 do
-      resources :drivers, only: [:index]
-    end
-  end
-
   # Kart routes
   get 'api/v1/karts/high_end', :to => 'api/v1/karts#high_end'
   get 'api/v1/karts/name', :to => 'api/v1/karts#name'
@@ -42,12 +36,14 @@ Rails.application.routes.draw do
   get 'api/v1/karts/normal', :to => 'api/v1/karts#normal'
   get 'api/v1/karts/special_skill', :to => 'api/v1/karts#special_skill'
   get 'api/v1/karts/super', :to => 'api/v1/karts#super'
-  
-  namespace :api do
-    namespace :v1 do
-      resources :karts, only: [:index]
-    end
-  end
+
+  # Glider routes
+  get 'api/v1/gliders/high_end', :to => 'api/v1/gliders#high_end'
+  get 'api/v1/gliders/name', :to => 'api/v1/gliders#name'
+  get 'api/v1/gliders/name_contains', :to => 'api/v1/gliders#name_contains'
+  get 'api/v1/gliders/normal', :to => 'api/v1/gliders#normal'
+  get 'api/v1/gliders/special_skill', :to => 'api/v1/gliders#special_skill'
+  get 'api/v1/gliders/super', :to => 'api/v1/gliders#super'
 
   get '*other', to: 'home#index'
 end

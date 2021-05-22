@@ -176,7 +176,7 @@ fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario', {
 				<thead>
 					<tr>
 						<th scope="col">
-							<h2>Gliders (coming soon...)</h2>
+							<h2>Gliders</h2>
 						</th>
 						<th scope="col"></th>
 					</tr>
@@ -184,10 +184,35 @@ fetch('https://mario-kart-tour-api.herokuapp.com/api/v1/drivers/name?q=mario', {
 				<tbody>
 					<tr>
 						<td>GET api/v1/gliders</td>
-						<td>Returns a list of all gliders</td>
+						<td>Returns a list of all gliders (data still being added)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/gliders/high_end</a></td>
+						<td>Returns a list of all High-End gliders</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/gliders/name?q=</td>
+						<td>Returns the glider with the specified name (e.g. starchute, shell_parachute)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/gliders/name_contains?q=</td>
+						<td>Returns a list of all gliders with a name that contains the specified string (e.g. parafoil)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/gliders/normal</td>
+						<td>Returns a list of all Normal gliders</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/gliders/special_skill?q=</td>
+						<td>Returns a list of all gliders with the specified skill (e.g. coin_plus, bullet_bill_plus)</td>
+					</tr>
+					<tr>
+						<td>GET api/v1/gliders/super</a></td>
+						<td>Returns a list of all Super gliders</td>
 					</tr>
 				</tbody>
 			</table>
+
 			<table class="table">
 				<thead>
 					<tr>
