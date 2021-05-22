@@ -1,6 +1,3 @@
-# app/lib/json_web_token.rb
- 
-# frozen_string_literal: true
 require 'net/http'
 require 'uri'
  
@@ -8,8 +5,8 @@ class JsonWebToken
   def self.verify(token)
     JWT.decode(token, nil,
         true, # Verify the signature of this token
-        algorithm: 'RS256',                          # RS256 or HS256
-        iss: 'https://dev-lxksyuxg.us.auth0.com/',    # something like 000.eu.auth0.com
+        algorithm: 'RS256',
+        iss: 'https://dev-lxksyuxg.us.auth0.com/',
         verify_iss: false,
         # aud: Rails.application.credentials[Rails.env.to_sym][:auth0][:api_audience] ## With staging namespace
         aud: Rails.application.credentials[:auth0][:api_audience],
