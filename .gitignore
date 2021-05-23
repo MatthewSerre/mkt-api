@@ -25,3 +25,4 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/mktapi-f8cb2bd1662d.json
