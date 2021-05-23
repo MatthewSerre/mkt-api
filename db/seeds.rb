@@ -1,6 +1,7 @@
 require 'csv'
 
-session = GoogleDrive::Session.from_service_account_key("mktapi-f8cb2bd1662d.json")
+# session = GoogleDrive::Session.from_service_account_key("mktapi-f8cb2bd1662d.json")
+session = GoogleDrive::Session.from_service_account_key(JSON.parse(process.env.SECRET_JSON))
 
 drivers_file = session.file_by_title("drivers")
 drivers_file.export_as_file(Rails.root.join('lib', 'seeds', 'drivers.csv'))
