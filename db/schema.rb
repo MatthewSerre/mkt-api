@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_23_005344) do
+ActiveRecord::Schema.define(version: 2021_05_23_011321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_005344) do
     t.text "favorite_courses_level_3", default: [], array: true
     t.text "favorite_courses_level_6", default: [], array: true
     t.text "favored_courses", default: [], array: true
-    t.boolean "is_all_clear_pipe"
+    t.boolean "is_all_clear_pipe", default: false
   end
 
   create_table "gliders", force: :cascade do |t|
