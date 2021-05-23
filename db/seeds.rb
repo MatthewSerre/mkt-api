@@ -1,5 +1,10 @@
 require 'csv'
 
+session = GoogleDrive::Session.from_service_account_key("mktapi-f8cb2bd1662d.json")
+
+drivers_file = session.file_by_title("drivers")
+drivers_file.export_as_file(Rails.root.join('lib', 'seeds', 'drivers.csv'))
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
 csv = CSV.parse(csv_text.scrub, headers: true)
 csv.each do |row|
@@ -75,72 +80,72 @@ csv.each do |row|
     end
 end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'karts.csv'))
-csv = CSV.parse(csv_text.scrub, headers: true)
-csv.each do |row|
-    begin
-        k = Kart.find_or_create_by(name: row['name'])
-        k.position = row['position']
-        k.rarity = row['rarity']
-        k.special_skill = row['special_skill']
-        k.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
-        k.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
-        k.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
-        k.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
-        k.debut_tour = row['debut_tour']
-        k.date_added = row['date_added']
-        k.save
-        puts "#{k.name} saved."
-    rescue => e
-        puts "#{e.class.name}: #{e.message}"
-    end
-end
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'karts.csv'))
+# csv = CSV.parse(csv_text.scrub, headers: true)
+# csv.each do |row|
+#     begin
+#         k = Kart.find_or_create_by(name: row['name'])
+#         k.position = row['position']
+#         k.rarity = row['rarity']
+#         k.special_skill = row['special_skill']
+#         # k.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
+#         # k.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
+#         # k.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
+#         # k.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
+#         k.debut_tour = row['debut_tour']
+#         k.date_added = row['date_added']
+#         k.save
+#         puts "#{k.name} saved."
+#     rescue => e
+#         puts "#{e.class.name}: #{e.message}"
+#     end
+# end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'gliders.csv'))
-csv = CSV.parse(csv_text.scrub, headers: true)
-csv.each do |row|
-    begin
-        g = Glider.find_or_create_by(name: row['name'])
-        g.position = row['position']
-        g.rarity = row['rarity']
-        g.special_skill = row['special_skill']
-        g.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
-        g.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
-        g.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
-        g.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
-        g.debut_tour = row['debut_tour']
-        g.date_added = row['date_added']
-        g.save
-        puts "#{g.name} saved."
-    rescue => e
-        puts "#{e.class.name}: #{e.message}"
-    end
-end
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'gliders.csv'))
+# csv = CSV.parse(csv_text.scrub, headers: true)
+# csv.each do |row|
+#     begin
+#         g = Glider.find_or_create_by(name: row['name'])
+#         g.position = row['position']
+#         g.rarity = row['rarity']
+#         g.special_skill = row['special_skill']
+#         # g.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
+#         # g.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
+#         # g.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
+#         # g.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
+#         g.debut_tour = row['debut_tour']
+#         g.date_added = row['date_added']
+#         g.save
+#         puts "#{g.name} saved."
+#     rescue => e
+#         puts "#{e.class.name}: #{e.message}"
+#     end
+# end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
-csv = CSV.parse(csv_text.scrub, headers: true)
-csv.each do |row|
-    if /\d+$/.match?(row['name'])
-        name = row['name'] + row['suffix'].to_s
-    else
-        name = row['name'] + ' ' + row['suffix'].to_s
-    end
-    name.strip!
-    begin
-        c = Course.find_or_create_by(name: name)
-        # c.top_shelf_drivers_base = !row['top_shelf_drivers_base'].nil? ? row['top_shelf_drivers_base'].split(/\s*,\s*/) : []
-        # c.top_shelf_drivers_level_3 = !row['top_shelf_drivers_level_3'].nil? ? row['top_shelf_drivers_level_3'].split(/\s*,\s*/) : []
-        # c.top_shelf_drivers_level_6 = !row['top_shelf_drivers_level_6'].nil? ? row['top_shelf_drivers_level_6'].split(/\s*,\s*/) : []
-        # c.mid_shelf_drivers =  = !row['mid_shelf_drivers'].nil? ? row['mid_shelf_drivers'].split(/\s*,\s*/) : []
-        c.debut_tour = row['debut_tour']
-        c.date_added = row['date_added']
-        c.debut_game = row['debut_game']
-        c.debut_system = row['debut_system']
-        c.is_reverse = row['is_reverse']
-        c.is_trick = row['is_trick']
-        c.save
-        puts "#{c.name} saved."
-    rescue => e
-        puts "#{e.class.name}: #{e.message}"
-    end
-end
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
+# csv = CSV.parse(csv_text.scrub, headers: true)
+# csv.each do |row|
+#     if /\d+$/.match?(row['name'])
+#         name = row['name'] + row['suffix'].to_s
+#     else
+#         name = row['name'] + ' ' + row['suffix'].to_s
+#     end
+#     name.strip!
+#     begin
+#         c = Course.find_or_create_by(name: name)
+#         # c.top_shelf_drivers_base = !row['top_shelf_drivers_base'].nil? ? row['top_shelf_drivers_base'].split(/\s*,\s*/) : []
+#         # c.top_shelf_drivers_level_3 = !row['top_shelf_drivers_level_3'].nil? ? row['top_shelf_drivers_level_3'].split(/\s*,\s*/) : []
+#         # c.top_shelf_drivers_level_6 = !row['top_shelf_drivers_level_6'].nil? ? row['top_shelf_drivers_level_6'].split(/\s*,\s*/) : []
+#         # c.mid_shelf_drivers =  = !row['mid_shelf_drivers'].nil? ? row['mid_shelf_drivers'].split(/\s*,\s*/) : []
+#         c.debut_tour = row['debut_tour']
+#         c.date_added = row['date_added']
+#         c.debut_game = row['debut_game']
+#         c.debut_system = row['debut_system']
+#         c.is_reverse = row['is_reverse']
+#         c.is_trick = row['is_trick']
+#         c.save
+#         puts "#{c.name} saved."
+#     rescue => e
+#         puts "#{e.class.name}: #{e.message}"
+#     end
+# end
