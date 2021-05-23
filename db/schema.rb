@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_230259) do
+ActiveRecord::Schema.define(version: 2021_05_23_005344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_05_22_230259) do
     t.boolean "shell", default: false
     t.boolean "three_hairs", default: false
     t.boolean "baby", default: false
-    t.boolean "daily_select", default: false
+    t.boolean "is_daily_select", default: false
     t.boolean "kong", default: false
     t.boolean "koopaling", default: false
     t.boolean "crown", default: false
