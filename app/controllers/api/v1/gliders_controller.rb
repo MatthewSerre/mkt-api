@@ -1,4 +1,4 @@
-class GlidersController < ApplicationController
+class Api::V1::GlidersController < ApplicationController
     # include Secured
 
     def index
