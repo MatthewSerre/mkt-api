@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_23_011321) do
+ActiveRecord::Schema.define(version: 2021_05_24_232221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_011321) do
     t.text "top_shelf_karts_level_3", default: [], array: true
     t.text "top_shelf_karts_level_6", default: [], array: true
     t.text "mid_shelf_karts", default: [], array: true
+    t.boolean "is_ranked", default: false
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -79,7 +80,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_011321) do
     t.text "favorite_courses_level_3", default: [], array: true
     t.text "favorite_courses_level_6", default: [], array: true
     t.text "favored_courses", default: [], array: true
-    t.boolean "is_all_clear_pipe", default: false
+    t.boolean "is_in_pipes", default: false
   end
 
   create_table "gliders", force: :cascade do |t|
@@ -87,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_011321) do
     t.string "debut_tour"
     t.datetime "date_added"
     t.boolean "is_daily_select"
-    t.boolean "is_all_clear_pipe"
+    t.boolean "is_in_pipes"
     t.string "special_skill"
     t.text "favorite_courses_base", default: [], array: true
     t.text "favorite_courses_level_3", default: [], array: true
@@ -112,7 +113,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_011321) do
     t.integer "position"
     t.datetime "date_added"
     t.string "debut_tour"
-    t.boolean "is_all_clear_pipe"
+    t.boolean "is_in_pipes"
   end
 
 end

@@ -2,37 +2,37 @@ class Api::V1::KartsController < ApplicationController
     # include Secured
 
     def index
-        karts = Kart.all
+        karts = Kart.all.order(:position)
         render json: karts
     end
 
     def high_end
-        karts = Kart.where(rarity: "High-End")
+        karts = Kart.where(rarity: "High-End").order(:position)
         render json: karts
     end
 
     def name
-        kart = Kart.find_by(name: params[:q])
+        kart = Kart.find_by(name: params[:q]).order(:position)
         render json: !kart.nil? ? kart : []
     end
 
     def name_contains
-        karts = Kart.where("name LIKE ?", "%" + params[:q].titleize + "%")
+        karts = Kart.where("name LIKE ?", "%" + params[:q].titleize + "%").order(:position)
         render json: karts
     end
 
     def normal
-        karts = Kart.where(rarity: "Normal")
+        karts = Kart.where(rarity: "Normal").order(:position)
         render json: karts
     end
 
     def special_skill
-        kart = Kart.where(special_skill: params[:q].titleize)
+        kart = Kart.where(special_skill: params[:q].titleize).order(:position)
         render json: kart
     end
 
     def super
-        karts = Kart.where(rarity: "Super")
+        karts = Kart.where(rarity: "Super").order(:position)
         render json: karts
     end
 
