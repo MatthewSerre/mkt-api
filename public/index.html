@@ -50,12 +50,38 @@
 						<li><a href="https://github.com/MatthewSerre/mkt-api/blob/main/CHANGELOG.md">Changelog</a></li>
 						<li><a href="https://matthewserre.com" target="_blank">Contact</a></li>
 						<li><a href="https://github.com/MatthewSerre/mkt-api" target="_blank">GitHub</a></li>
-						<li>How to Use</li>
+						<li><a href="#" data-toggle="modal" data-target="#howtouse">How to Use</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
 			</div>
 		</nav>
+		  
+<!-- Modal -->
+<div class="modal fade" id="howtouse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">How to Use</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<ol>
+				<li>Follow <a href="https://auth0.com/docs/applications/dynamic-client-registration">the Auth0 documentation</a> to register your application using the <code>https://dev-lxksyuxg.us.auth0.com/oidc/register</code> endpoint</li>
+				<li><a href="https://matthewserre.com">Contact me</a> with the name of your application (client_name) so that I can authorize it to use the API</li>
+				<li>Review <a href="https://auth0.com/docs/flows/client-credentials-flow">additional Auth0 documentation</a> to understand the Client Credentials Flow and then use your newly obtained credentials to <a href="https://auth0.com/docs/api/authentication?http#client-credentials-flow">request an Access Token</a> from <code>https://dev-lxksyuxg.us.auth0.com/oauth/token</code> (<code>audience</code> is <code>https://mario-kart-tour-api.herokuapp.com</code> (the doc provides a few types of methods for making the request; Auth0 documentation is abundant, so you may find code samples in your language of choice by searching))</li>
+				<li>Use your Access Token to <a href="https://auth0.com/docs/flows/call-your-api-using-the-authorization-code-flow#call-api">make a call to the API</a></li>
+			</ol>
+		</div>
+		</div>
+		<!-- <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div> -->
+	  </div>
+	</div>
+
 		<div class="container">
 			<h4>Mario Kart Tour API aims to be a robust resource for developers to leverage when creating applications or websites related to the popular <a href="https://mariokarttour.com/en-US">Mario Kart Tour</a> mobile game</h4>
 			<br />
