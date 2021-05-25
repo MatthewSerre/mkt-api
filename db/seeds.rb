@@ -1,10 +1,10 @@
 require 'csv'
 
 # session = GoogleDrive::Session.from_service_account_key("mktapi-f8cb2bd1662d.json")
-session = GoogleDrive::Session.from_service_account_key(StringIO.new(ENV['SECRET_JSON']))
+# session = GoogleDrive::Session.from_service_account_key(StringIO.new(ENV['SECRET_JSON']))
 
-drivers_file = session.file_by_title("drivers")
-drivers_file.export_as_file(Rails.root.join('lib', 'seeds', 'drivers.csv'))
+# drivers_file = session.file_by_title("drivers")
+# drivers_file.export_as_file(Rails.root.join('lib', 'seeds', 'drivers.csv'))
 drivers_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
 drivers_csv = CSV.parse(drivers_text.scrub, headers: true)
 drivers_csv.each do |row|
