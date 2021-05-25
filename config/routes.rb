@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :gliders
   root to: 'home#index'
 
   namespace :api do
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   get 'api/v1/courses/name', :to => 'api/v1/courses#name'
   get 'api/v1/courses/name_contains', :to => 'api/v1/courses#name_contains'
   get 'api/v1/courses/normal', :to => 'api/v1/courses#normal'
+  get 'api/v1/courses/ranked', :to => 'api/v1/courses#ranked'
   get 'api/v1/courses/reverse', :to => 'api/v1/courses#reverse'
   get 'api/v1/courses/reverse_trick', :to => 'api/v1/courses#reverse_trick'
   get 'api/v1/courses/trick', :to => 'api/v1/courses#trick'
