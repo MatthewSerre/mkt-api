@@ -28,7 +28,7 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def name
-        driver = Driver.find_by(name: params[:q].titleize).order(:position)
+        driver = Driver.find_by(name: params[:q].titleize)
         render json: !driver.nil? ? driver : []
     end
 
@@ -53,7 +53,7 @@ class Api::V1::DriversController < ApplicationController
     end
 
     def test
-        driver = Driver.find_by(name: "Mario").order(:position)
+        driver = Driver.find_by(name: "Mario")
         render json: !driver.nil? ? driver : []
     end
 

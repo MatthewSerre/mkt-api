@@ -12,7 +12,7 @@ class Api::V1::GlidersController < ApplicationController
     end
 
     def name
-        glider = Glider.find_by(name: params[:q]).order(:position)
+        glider = Glider.find_by(name: params[:q])
         render json: !glider.nil? ? glider : []
     end
 

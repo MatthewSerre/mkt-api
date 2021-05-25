@@ -12,7 +12,7 @@ class Api::V1::KartsController < ApplicationController
     end
 
     def name
-        kart = Kart.find_by(name: params[:q]).order(:position)
+        kart = Kart.find_by(name: params[:q])
         render json: !kart.nil? ? kart : []
     end
 

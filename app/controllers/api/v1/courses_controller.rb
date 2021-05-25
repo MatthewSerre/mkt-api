@@ -12,7 +12,7 @@ class Api::V1::CoursesController < ApplicationController
     end
 
     def name
-        course = Course.find_by(name: params[:q]).order(:name)
+        course = Course.find_by(name: params[:q])
         render json: !course.nil? ? course : []
     end
 
