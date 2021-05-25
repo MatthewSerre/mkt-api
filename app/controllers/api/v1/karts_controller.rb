@@ -1,5 +1,5 @@
 class Api::V1::KartsController < ApplicationController
-    # include Secured
+    include Secured
 
     def index
         karts = Kart.all.order(:position)

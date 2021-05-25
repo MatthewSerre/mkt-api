@@ -12,8 +12,18 @@ class Api::V1::DriversController < ApplicationController
         render json: drivers
     end
 
+    def daily_selects
+        drivers = Driver.where(is_daily_select: true).order(:position)
+        render json: drivers
+    end
+
     def high_end
         drivers = Driver.where(rarity: "High-End").order(:position)
+        render json: drivers
+    end
+
+    def in_pipes
+        drivers = Driver.where(is_in_pipes: true).order(:position)
         render json: drivers
     end
 

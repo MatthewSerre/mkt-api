@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   # Driver routes
   get 'api/v1/drivers/babies', :to => 'api/v1/drivers#babies'
+  get 'api/v1/drivers/daily_selects', :to => 'api/v1/drivers#daily_selects'
   get 'api/v1/drivers/high_end', :to => 'api/v1/drivers#high_end'
+  get 'api/v1/drivers/in_pipes', :to => 'api/v1/drivers#in_pipes'
   get 'api/v1/drivers/kongs', :to => 'api/v1/drivers#kongs'
   get 'api/v1/drivers/koopalings', :to => 'api/v1/drivers#koopalings'
   get 'api/v1/drivers/name', :to => 'api/v1/drivers#name'
