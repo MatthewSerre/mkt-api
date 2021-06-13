@@ -10,22 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_232221) do
+ActiveRecord::Schema.define(version: 2021_06_13_215106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "course_driver_connections", force: :cascade do |t|
-    t.bigint "course_id"
-    t.bigint "driver_id"
-    t.boolean "is_favored", default: false
-    t.boolean "is_favorite", default: false
-    t.boolean "is_favorite_at_level_3", default: false
-    t.boolean "is_favorite_at_level_6", default: false
+  create_table "course_driver_connection_level3s", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "driver_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_course_driver_connections_on_course_id"
-    t.index ["driver_id"], name: "index_course_driver_connections_on_driver_id"
+  end
+
+  create_table "course_driver_connection_level6s", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "driver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "course_driver_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "driver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -38,15 +46,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_232221) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "debut_system"
-    t.text "top_shelf_drivers_base", default: [], array: true
-    t.text "top_shelf_drivers_level_3", default: [], array: true
-    t.text "top_shelf_drivers_level_6", default: [], array: true
-    t.text "mid_shelf_drivers", default: [], array: true
-    t.text "top_shelf_karts_base", default: [], array: true
-    t.text "top_shelf_karts_level_3", default: [], array: true
-    t.text "top_shelf_karts_level_6", default: [], array: true
-    t.text "mid_shelf_karts", default: [], array: true
-    t.boolean "is_ranked", default: false
+    t.boolean "is_ranked_week_1", default: false
+    t.boolean "is_ranked_week_2", default: false
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -76,11 +77,12 @@ ActiveRecord::Schema.define(version: 2021_05_24_232221) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
-    t.text "favorite_courses_base", default: [], array: true
-    t.text "favorite_courses_level_3", default: [], array: true
-    t.text "favorite_courses_level_6", default: [], array: true
-    t.text "favored_courses", default: [], array: true
     t.boolean "is_in_pipes", default: false
+  end
+
+  create_table "favorite_course_level1s", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "gliders", force: :cascade do |t|
@@ -90,10 +92,6 @@ ActiveRecord::Schema.define(version: 2021_05_24_232221) do
     t.boolean "is_daily_select"
     t.boolean "is_in_pipes"
     t.string "special_skill"
-    t.text "favorite_courses_base", default: [], array: true
-    t.text "favorite_courses_level_3", default: [], array: true
-    t.text "favorite_courses_level_6", default: [], array: true
-    t.text "favored_courses"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
@@ -103,10 +101,6 @@ ActiveRecord::Schema.define(version: 2021_05_24_232221) do
     t.string "name"
     t.string "rarity"
     t.string "special_skill"
-    t.text "favorite_courses_base", default: [], array: true
-    t.text "favorite_courses_level_3", default: [], array: true
-    t.text "favorite_courses_level_6", default: [], array: true
-    t.text "favored_courses", default: [], array: true
     t.boolean "is_daily_select"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

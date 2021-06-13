@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :course_driver_connections
   root to: 'home#index'
 
   namespace :api do
