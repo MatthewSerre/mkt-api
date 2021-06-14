@@ -41,39 +41,31 @@ drivers_csv.each do |row|
     end
 end
 
-# karts_text = File.read(Rails.root.join('lib', 'seeds', 'karts.csv'))
-# karts_csv = CSV.parse(karts_text.scrub, headers: true)
-# karts_csv.each do |row|
-#     begin
-#         k = Kart.find_or_create_by(name: row['name'])
-#         k.position = row['position']
-#         k.rarity = row['rarity']
-#         k.special_skill = row['special_skill']
-#         # k.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
-#         # k.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
-#         # k.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
-#         # k.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
-#         k.debut_tour = row['debut_tour']
-#         k.date_added = row['date_added']
-#         k.save
-#         puts "#{k.name} saved."
-#     rescue => e
-#         puts "#{e.class.name}: #{e.message}"
-#     end
-# end
+karts_text = File.read(Rails.root.join('lib', 'seeds', 'karts.csv'))
+karts_csv = CSV.parse(karts_text.scrub, headers: true)
+karts_csv.each do |row|
+    begin
+        k = Kart.find_or_create_by(name: row['name'])
+        k.position = row['position']
+        k.rarity = row['rarity']
+        k.special_skill = row['special_skill']
+        k.debut_tour = row['debut_tour']
+        k.date_added = row['date_added']
+        k.save
+        puts "#{k.name} saved."
+    rescue => e
+        puts "#{e.class.name}: #{e.message}"
+    end
+end
 
-# csv_text = File.read(Rails.root.join('lib', 'seeds', 'gliders.csv'))
-# csv = CSV.parse(csv_text.scrub, headers: true)
-# csv.each do |row|
+# gliders_text = File.read(Rails.root.join('lib', 'seeds', 'gliders.csv'))
+# gliders_csv = CSV.parse(gliders_text.scrub, headers: true)
+# gliders_csv.each do |row|
 #     begin
 #         g = Glider.find_or_create_by(name: row['name'])
 #         g.position = row['position']
 #         g.rarity = row['rarity']
 #         g.special_skill = row['special_skill']
-#         # g.favorite_courses_base = !row['favorite_courses_base'].nil? ? row['favorite_courses_base'].split(/\s*,\s*/) : []
-#         # g.favorite_courses_level_3 = !row['favorite_courses_level_3'].nil? ? row['favorite_courses_level_3'].split(/\s*,\s*/) : []
-#         # g.favorite_courses_level_6 = !row['favorite_courses_level_6'].nil? ? row['favorite_courses_level_6'].split(/\s*,\s*/) : []
-#         # g.favored_courses = !row['favored_courses'].nil? ? row['favored_courses'].split(/\s*,\s*/) : []
 #         g.debut_tour = row['debut_tour']
 #         g.date_added = row['date_added']
 #         g.save
@@ -83,9 +75,9 @@ end
 #     end
 # end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
-csv = CSV.parse(csv_text.scrub, headers: true)
-csv.each do |row|
+courses_text = File.read(Rails.root.join('lib', 'seeds', 'courses.csv'))
+courses_csv = CSV.parse(courses_text.scrub, headers: true)
+courses_csv.each do |row|
     if /\d+$/.match?(row['name'])
         name = row['name'] + row['suffix'].to_s
     else
@@ -107,9 +99,6 @@ csv.each do |row|
     end
 end
 
-
-drivers_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
-drivers_csv = CSV.parse(drivers_text.scrub, headers: true)
 drivers_csv.each do |row|
     d = Driver.find_by(name: row['name'])
     begin
@@ -150,3 +139,87 @@ drivers_csv.each do |row|
         puts "#{e.class.name}: #{e.message}"
     end
 end
+
+karts_csv.each do |row|
+    k = Kart.find_by(name: row['name'])
+    begin
+        unless row['level_one_favorite_courses'].blank?
+            row['level_one_favorite_courses'].split(/\s*,\s*/).each do |course|
+                begin
+                    c = Course.find_by(name: course)
+                    k.level_one_favorite_courses << c unless k.level_one_favorite_courses.include?(c)
+                    puts "Connection established between #{k.name} and #{c.name}."
+                rescue => e
+                    puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
+                end
+            end
+        end
+        unless row['level_three_favorite_courses'].blank?
+            row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
+                begin
+                    c = Course.find_by(name: course)
+                    k.level_three_favorite_courses << c unless k.level_three_favorite_courses.include?(c)
+                    puts "Connection established between #{k.name} and #{c.name}."
+                rescue => e
+                    puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
+                end
+            end
+        end
+        unless row['level_six_favorite_courses'].blank?
+            row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
+                begin
+                    c = Course.find_by(name: course)
+                    k.level_six_favorite_courses << c unless k.level_six_favorite_courses.include?(c)
+                    puts "Connection established between #{k.name} and #{c.name}."
+                rescue => e
+                    puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
+                end
+            end
+        end
+    rescue => e
+        puts "#{e.class.name}: #{e.message}"
+    end
+end
+
+# gliders_csv.each do |row|
+#     g = Glider.find_by(name: row['name'])
+#     begin
+#         unless row['level_one_favorite_courses'].blank?
+#             row['level_one_favorite_courses'].split(/\s*,\s*/).each do |course|
+#                 begin
+#                     c = Course.find_by(name: course)
+#                     g.level_one_favorite_courses << c unless g.level_one_favorite_courses.include?(c)
+#                     puts "Connection established between #{g.name} and #{c.name}."
+#                 rescue => e
+#                     puts "Error establishing connection between #{g.name} and #{course}. #{e.class.name}: #{e.message}"
+#                 end
+#             end
+#         end
+#         unless row['level_three_favorite_courses'].blank?
+#             row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
+#                 begin
+#                     c = Course.find_by(name: course)
+#                     g.level_three_favorite_courses << c unless g.level_three_favorite_courses.include?(c)
+#                     puts "Connection established between #{g.name} and #{c.name}."
+#                 rescue => e
+#                     puts "Error establishing connection between #{g.name} and #{course}. #{e.class.name}: #{e.message}"
+#                 end
+#             end
+#         end
+#         unless row['level_six_favorite_courses'].blank?
+#             row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
+#                 begin
+#                     c = Course.find_by(name: course)
+#                     g.level_six_favorite_courses << c unless g.level_six_favorite_courses.include?(c)
+#                     puts "Connection established between #{g.name} and #{c.name}."
+#                 rescue => e
+#                     puts "Error establishing connection between #{g.name} and #{course}. #{e.class.name}: #{e.message}"
+#                 end
+#             end
+#         end
+#     rescue => e
+#         puts "#{e.class.name}: #{e.message}"
+#     end
+# end
+
+puts "Seeding complete."
