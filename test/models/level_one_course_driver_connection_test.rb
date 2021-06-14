@@ -1,6 +1,6 @@
 require "test_helper"
 
-class FavoriteCourseLevel1Test < ActiveSupport::TestCase
+class LevelOneCourseDriverConnectionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

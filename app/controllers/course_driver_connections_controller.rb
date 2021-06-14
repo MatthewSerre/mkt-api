@@ -1,2 +1,0 @@
-class CourseDriverConnectionsController < ApplicationController
-end

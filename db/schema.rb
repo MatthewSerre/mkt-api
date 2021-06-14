@@ -10,31 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_215106) do
+ActiveRecord::Schema.define(version: 2021_06_14_002636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "course_driver_connection_level3s", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "driver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "course_driver_connection_level6s", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "driver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "course_driver_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "driver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -80,11 +59,6 @@ ActiveRecord::Schema.define(version: 2021_06_13_215106) do
     t.boolean "is_in_pipes", default: false
   end
 
-  create_table "favorite_course_level1s", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "gliders", force: :cascade do |t|
     t.string "name"
     t.string "debut_tour"
@@ -108,6 +82,27 @@ ActiveRecord::Schema.define(version: 2021_06_13_215106) do
     t.datetime "date_added"
     t.string "debut_tour"
     t.boolean "is_in_pipes"
+  end
+
+  create_table "level_one_course_driver_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "driver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "level_six_course_driver_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "driver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "level_three_course_driver_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "driver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

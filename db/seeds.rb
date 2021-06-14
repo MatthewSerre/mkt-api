@@ -117,7 +117,7 @@ drivers_csv.each do |row|
             row['favorite_courses_base'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
-                    d.favorite_courses_level_1 << c unless d.favorite_courses_level_1.include?(c)
+                    d.level_one_favorite_courses << c unless d.level_one_favorite_courses.include?(c)
                 rescue => e
                     puts "#{e.class.name}: #{e.message}"
                 end
@@ -127,7 +127,7 @@ drivers_csv.each do |row|
             row['favorite_courses_level_3'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
-                    d.favorite_courses_level_3 << c unless d.favorite_courses_level_3.include?(c)
+                    d.level_three_favorite_courses << c unless d.level_three_favorite_courses.include?(c)
                 rescue => e
                     puts "#{e.class.name}: #{e.message}"
                 end
@@ -137,7 +137,7 @@ drivers_csv.each do |row|
             row['favorite_courses_level_6'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
-                    d.favorite_courses_level_6 << c unless d.favorite_courses_level_6.include?(c)
+                    d.level_six_favorite_courses << c unless d.level_six_favorite_courses.include?(c)
                 rescue => e
                     puts "#{e.class.name}: #{e.message}"
                 end
