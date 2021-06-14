@@ -140,46 +140,46 @@ drivers_csv.each do |row|
     end
 end
 
-karts_csv.each do |row|
-    k = Kart.find_by(name: row['name'])
-    begin
-        unless row['level_one_favorite_courses'].blank?
-            row['level_one_favorite_courses'].split(/\s*,\s*/).each do |course|
-                begin
-                    c = Course.find_by(name: course)
-                    k.level_one_favorite_courses << c unless k.level_one_favorite_courses.include?(c)
-                    puts "Connection established between #{k.name} and #{c.name}."
-                rescue => e
-                    puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
-                end
-            end
-        end
-        unless row['level_three_favorite_courses'].blank?
-            row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
-                begin
-                    c = Course.find_by(name: course)
-                    k.level_three_favorite_courses << c unless k.level_three_favorite_courses.include?(c)
-                    puts "Connection established between #{k.name} and #{c.name}."
-                rescue => e
-                    puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
-                end
-            end
-        end
-        unless row['level_six_favorite_courses'].blank?
-            row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
-                begin
-                    c = Course.find_by(name: course)
-                    k.level_six_favorite_courses << c unless k.level_six_favorite_courses.include?(c)
-                    puts "Connection established between #{k.name} and #{c.name}."
-                rescue => e
-                    puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
-                end
-            end
-        end
-    rescue => e
-        puts "#{e.class.name}: #{e.message}"
-    end
-end
+# karts_csv.each do |row|
+#     k = Kart.find_by(name: row['name'])
+#     begin
+#         unless row['level_one_favorite_courses'].blank?
+#             row['level_one_favorite_courses'].split(/\s*,\s*/).each do |course|
+#                 begin
+#                     c = Course.find_by(name: course)
+#                     k.level_one_favorite_courses << c unless k.level_one_favorite_courses.include?(c)
+#                     puts "Connection established between #{k.name} and #{c.name}."
+#                 rescue => e
+#                     puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
+#                 end
+#             end
+#         end
+#         unless row['level_three_favorite_courses'].blank?
+#             row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
+#                 begin
+#                     c = Course.find_by(name: course)
+#                     k.level_three_favorite_courses << c unless k.level_three_favorite_courses.include?(c)
+#                     puts "Connection established between #{k.name} and #{c.name}."
+#                 rescue => e
+#                     puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
+#                 end
+#             end
+#         end
+#         unless row['level_six_favorite_courses'].blank?
+#             row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
+#                 begin
+#                     c = Course.find_by(name: course)
+#                     k.level_six_favorite_courses << c unless k.level_six_favorite_courses.include?(c)
+#                     puts "Connection established between #{k.name} and #{c.name}."
+#                 rescue => e
+#                     puts "Error establishing connection between #{k.name} and #{course}. #{e.class.name}: #{e.message}"
+#                 end
+#             end
+#         end
+#     rescue => e
+#         puts "#{e.class.name}: #{e.message}"
+#     end
+# end
 
 # gliders_csv.each do |row|
 #     g = Glider.find_by(name: row['name'])
