@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_002636) do
+ActiveRecord::Schema.define(version: 2021_06_14_231400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,20 @@ ActiveRecord::Schema.define(version: 2021_06_14_002636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "level_one_course_glider_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "glider_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "level_one_course_kart_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "kart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "level_six_course_driver_connections", force: :cascade do |t|
     t.integer "course_id"
     t.integer "driver_id"
@@ -98,9 +112,37 @@ ActiveRecord::Schema.define(version: 2021_06_14_002636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "level_six_course_kart_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "kart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "level_three_course_driver_connections", force: :cascade do |t|
     t.integer "course_id"
     t.integer "driver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "level_three_course_glider_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "glider_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "level_three_course_kart_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "kart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "level_three_six_glider_connections", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "glider_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
