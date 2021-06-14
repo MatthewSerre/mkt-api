@@ -125,7 +125,7 @@ drivers_csv.each do |row|
             end
         end
         unless row['level_three_favorite_courses'].blank?
-            row['level_three_avorite_courses'].split(/\s*,\s*/).each do |course|
+            row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
                     d.level_three_favorite_courses << c unless d.level_three_favorite_courses.include?(c)
