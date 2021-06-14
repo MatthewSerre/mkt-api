@@ -113,33 +113,36 @@ drivers_csv = CSV.parse(drivers_text.scrub, headers: true)
 drivers_csv.each do |row|
     d = Driver.find_by(name: row['name'])
     begin
-        if !row['favorite_courses_base'].nil?
-            row['favorite_courses_base'].split(/\s*,\s*/).each do |course|
+        unless row['level_one_favorite_courses'].blank?
+            row['level_one_favorite_courses'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
                     d.level_one_favorite_courses << c unless d.level_one_favorite_courses.include?(c)
+                    puts "Connection established between #{d.name} and #{c.name}."
                 rescue => e
-                    puts "#{e.class.name}: #{e.message}"
+                    puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
                 end
             end
         end
-        if !row['favorite_courses_level_3'].nil?
-            row['favorite_courses_level_3'].split(/\s*,\s*/).each do |course|
+        unless row['level_three_favorite_courses'].blank?
+            row['level_three_avorite_courses'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
                     d.level_three_favorite_courses << c unless d.level_three_favorite_courses.include?(c)
+                    puts "Connection established between #{d.name} and #{c.name}."
                 rescue => e
-                    puts "#{e.class.name}: #{e.message}"
+                    puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
                 end
             end
         end
-        if !row['favorite_courses_level_6'].nil?
-            row['favorite_courses_level_6'].split(/\s*,\s*/).each do |course|
+        unless row['level_six_favorite_courses'].blank?
+            row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
                 begin
                     c = Course.find_by(name: course)
                     d.level_six_favorite_courses << c unless d.level_six_favorite_courses.include?(c)
+                    puts "Connection established between #{d.name} and #{c.name}."
                 rescue => e
-                    puts "#{e.class.name}: #{e.message}"
+                    puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
                 end
             end
         end
