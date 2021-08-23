@@ -11,23 +11,20 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
+          name: Install bundler
           command: gem install bundler:2.1.4
       - run:
           name: Set bundle config
           command: bundle config set path 'vendor/bundle'
       - run:
-          name: bundle
+          name: Run bundle
           command: bundle install
-      - run:
-          name: Testing...
-          command: rails test
 
 workflows:
   heroku_deploy:
     jobs:
       - build
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+      - heroku/deploy-via-git:
           requires:
             - build
           filters:
