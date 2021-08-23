@@ -20,4 +20,4 @@ jobs:
           command: bundle install
       - run:
           name: Testing...
-          run: rails test
+          command: rails test
