@@ -1,12 +1,13 @@
 version: 2.1
+
 orbs:
-  ruby: circleci/ruby@0.1.2 
+  heroku: circleci/heroku@0.0.10
 
 jobs:
   build:
     docker:
       - image: circleci/ruby:2.7.2-stretch-node
-    executor: ruby/default
+    working_directory: ~/mkt-api
     steps:
       - checkout
       - run:
@@ -21,3 +22,14 @@ jobs:
       - run:
           name: Testing...
           command: rails test
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
