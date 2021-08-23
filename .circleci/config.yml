@@ -12,4 +12,6 @@ jobs:
       - run:
           name: Which bundler?
           command: gem install bundler:2.1.4
-      - bundle config set path 'vendor/bundle'
+      - run:
+          name: bundle
+          command: bundle config set path 'vendor/bundle'
