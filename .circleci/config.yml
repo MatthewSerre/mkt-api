@@ -15,3 +15,6 @@ jobs:
       - run:
           name: bundle
           command: bundle config set path 'vendor/bundle'
+      - run:
+          name: Testing...
+          command: rails test
