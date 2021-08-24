@@ -1,6 +1,6 @@
 require "test_helper"
 
-class LevelThreeSixGliderConnectionTest < ActiveSupport::TestCase
+class LevelSixCourseGliderConnectionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
