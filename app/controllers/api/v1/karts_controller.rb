@@ -11,22 +11,22 @@ module Api
       end
 
       def high_end
-        karts = Kart.where(rarity: 'High-End').order(:position)
+        karts = Kart.where(rarity: "High-End").order(:position)
         render json: karts
       end
 
       def name
         kart = Kart.find_by(name: params[:q])
-        render json: !kart.nil? ? kart : []
+        render json: kart.nil? ? [] : kart
       end
 
       def name_contains
-        karts = Kart.where('name LIKE ?', "%#{params[:q].titleize}%").order(:position)
+        karts = Kart.where("name LIKE ?", "%#{params[:q].titleize}%").order(:position)
         render json: karts
       end
 
       def normal
-        karts = Kart.where(rarity: 'Normal').order(:position)
+        karts = Kart.where(rarity: "Normal").order(:position)
         render json: karts
       end
 
@@ -36,7 +36,7 @@ module Api
       end
 
       def super
-        karts = Kart.where(rarity: 'Super').order(:position)
+        karts = Kart.where(rarity: "Super").order(:position)
         render json: karts
       end
     end

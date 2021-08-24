@@ -11,22 +11,22 @@ module Api
       end
 
       def high_end
-        gliders = Glider.where(rarity: 'High-End').order(:position)
+        gliders = Glider.where(rarity: "High-End").order(:position)
         render json: gliders
       end
 
       def name
         glider = Glider.find_by(name: params[:q])
-        render json: !glider.nil? ? glider : []
+        render json: glider.nil? ? [] : glider
       end
 
       def name_contains
-        gliders = Glider.where('name LIKE ?', "%#{params[:q].titleize}%").order(:position)
+        gliders = Glider.where("name LIKE ?", "%#{params[:q].titleize}%").order(:position)
         render json: gliders
       end
 
       def normal
-        gliders = Glider.where(rarity: 'Normal').order(:position)
+        gliders = Glider.where(rarity: "Normal").order(:position)
         render json: gliders
       end
 
@@ -36,7 +36,7 @@ module Api
       end
 
       def super
-        gliders = Glider.where(rarity: 'Super').order(:position)
+        gliders = Glider.where(rarity: "Super").order(:position)
         render json: gliders
       end
     end

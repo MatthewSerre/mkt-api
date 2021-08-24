@@ -22,7 +22,7 @@ module Api
       end
 
       def high_end
-        drivers = Driver.where(rarity: 'High-End').order(:position)
+        drivers = Driver.where(rarity: "High-End").order(:position)
         render json: drivers
       end
 
@@ -43,16 +43,16 @@ module Api
 
       def name
         driver = Driver.find_by(name: params[:q].titleize)
-        render json: !driver.nil? ? driver : []
+        render json: driver.nil? ? [] : driver
       end
 
       def name_contains
-        drivers = Driver.where('name LIKE ?', "%#{params[:q].titleize}%").order(:position)
+        drivers = Driver.where("name LIKE ?", "%#{params[:q].titleize}%").order(:position)
         render json: drivers
       end
 
       def normal
-        drivers = Driver.where(rarity: 'Normal').order(:position)
+        drivers = Driver.where(rarity: "Normal").order(:position)
         render json: drivers
       end
 
@@ -62,13 +62,13 @@ module Api
       end
 
       def super
-        drivers = Driver.where(rarity: 'Super').order(:position)
+        drivers = Driver.where(rarity: "Super").order(:position)
         render json: drivers
       end
 
       def test
-        driver = Driver.find_by(name: 'Mario')
-        render json: !driver.nil? ? driver : []
+        driver = Driver.find_by(name: "Mario")
+        render json: driver.nil? ? [] : driver
       end
     end
   end

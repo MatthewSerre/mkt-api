@@ -11,17 +11,17 @@ module Api
       end
 
       def debut_system
-        courses = Course.where(debut_system: params[:q].downcase == 'mobile' ? params[:q].titleize : params[:q].upcase).order(:name)
+        courses = Course.where(debut_system: params[:q].casecmp("mobile").zero? ? params[:q].titleize : params[:q].upcase).order(:name)
         render json: courses
       end
 
       def name
         course = Course.find_by(name: params[:q])
-        render json: !course.nil? ? course : []
+        render json: course.nil? ? [] : course
       end
 
       def name_contains
-        courses = Course.where('name LIKE ?', "%#{params[:q].titleize}%").order(:name)
+        courses = Course.where("name LIKE ?", "%#{params[:q].titleize}%").order(:name)
         render json: courses
       end
 
