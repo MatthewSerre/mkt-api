@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnsToKarts < ActiveRecord::Migration[6.1]
   def change
     add_column :karts, :date_added, :datetime

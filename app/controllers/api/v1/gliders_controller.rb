@@ -1,38 +1,44 @@
-class Api::V1::GlidersController < ApplicationController
-    # include Secured
+# frozen_string_literal: true
 
-    def index
+module Api
+  module V1
+    class GlidersController < ApplicationController
+      # include Secured
+
+      def index
         gliders = Glider.all.order(:position)
         render json: gliders
-    end
+      end
 
-    def high_end
+      def high_end
         gliders = Glider.where(rarity: "High-End").order(:position)
         render json: gliders
-    end
+      end
 
-    def name
+      def name
         glider = Glider.find_by(name: params[:q])
-        render json: !glider.nil? ? glider : []
-    end
+        render json: glider.nil? ? [] : glider
+      end
 
-    def name_contains
-        gliders = Glider.where("name LIKE ?", "%" + params[:q].titleize + "%").order(:position)
+      def name_contains
+        gliders = Glider.where("name LIKE ?", "%#{params[:q].titleize}%").order(:position)
         render json: gliders
-    end
+      end
 
-    def normal
+      def normal
         gliders = Glider.where(rarity: "Normal").order(:position)
         render json: gliders
-    end
+      end
 
-    def special_skill
+      def special_skill
         glider = Glider.where(special_skill: params[:q].titleize).order(:position)
         render json: glider
-    end
+      end
 
-    def super
+      def super
         gliders = Glider.where(rarity: "Super").order(:position)
         render json: gliders
+      end
     end
+  end
 end

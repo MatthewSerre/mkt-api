@@ -1,49 +1,54 @@
-class Api::V1::CoursesController < ApplicationController
-    include Secured
+# frozen_string_literal: true
 
-    def index
+module Api
+  module V1
+    class CoursesController < ApplicationController
+      include Secured
+
+      def index
         courses = Course.all.order(:name)
         render json: courses
-    end
+      end
 
-    def debut_system
-        courses = Course.where(debut_system: params[:q].downcase == "mobile" ? params[:q].titleize : params[:q].upcase).order(:name)
+      def debut_system
+        courses = Course.where(debut_system: params[:q].casecmp("mobile").zero? ? params[:q].titleize : params[:q].upcase).order(:name)
         render json: courses
-    end
+      end
 
-    def name
+      def name
         course = Course.find_by(name: params[:q])
-        render json: !course.nil? ? course : []
-    end
+        render json: course.nil? ? [] : course
+      end
 
-    def name_contains
-        courses = Course.where("name LIKE ?", "%" + params[:q].titleize + "%").order(:name)
+      def name_contains
+        courses = Course.where("name LIKE ?", "%#{params[:q].titleize}%").order(:name)
         render json: courses
-    end
+      end
 
-    def normal
+      def normal
         courses = Course.where(is_reverse: false, is_trick: false).order(:name)
         render json: courses
-    end
+      end
 
-    def ranked
+      def ranked
         courses = Course.where(is_ranked: true).order(:name).order(:name)
         render json: courses
-    end
+      end
 
-    def reverse
+      def reverse
         courses = Course.where(is_reverse: true, is_trick: false).order(:name)
         render json: courses
-    end
+      end
 
-    def reverse_trick
+      def reverse_trick
         courses = Course.where(is_reverse: true, is_trick: true).order(:name)
         render json: courses
-    end
+      end
 
-    def trick
+      def trick
         courses = Course.where(is_reverse: false, is_trick: true).order(:name)
         render json: courses
+      end
     end
-
+  end
 end

@@ -1,70 +1,75 @@
-class Api::V1::DriversController < ApplicationController
-    include Secured
-    skip_before_action :authenticate_request!, only: [:test]
+# frozen_string_literal: true
 
-    def index
+module Api
+  module V1
+    class DriversController < ApplicationController
+      include Secured
+      skip_before_action :authenticate_request!, only: [:test]
+
+      def index
         drivers = Driver.all.order(:position)
         render json: drivers
-    end
+      end
 
-    def babies
+      def babies
         drivers = Driver.where(baby: true).order(:position)
         render json: drivers
-    end
+      end
 
-    def daily_selects
+      def daily_selects
         drivers = Driver.where(is_daily_select: true).order(:position)
         render json: drivers
-    end
+      end
 
-    def high_end
+      def high_end
         drivers = Driver.where(rarity: "High-End").order(:position)
         render json: drivers
-    end
+      end
 
-    def in_pipes
+      def in_pipes
         drivers = Driver.where(is_in_pipes: true).order(:position)
         render json: drivers
-    end
+      end
 
-    def kongs
+      def kongs
         drivers = Driver.where(kong: true).order(:position)
         render json: drivers
-    end
+      end
 
-    def koopalings
+      def koopalings
         drivers = Driver.where(koopaling: true).order(:position)
         render json: drivers
-    end
+      end
 
-    def name
+      def name
         driver = Driver.find_by(name: params[:q].titleize)
-        render json: !driver.nil? ? driver : []
-    end
+        render json: driver.nil? ? [] : driver
+      end
 
-    def name_contains
-        drivers = Driver.where("name LIKE ?", "%" + params[:q].titleize + "%").order(:position)
+      def name_contains
+        drivers = Driver.where("name LIKE ?", "%#{params[:q].titleize}%").order(:position)
         render json: drivers
-    end
+      end
 
-    def normal
+      def normal
         drivers = Driver.where(rarity: "Normal").order(:position)
         render json: drivers
-    end
+      end
 
-    def special_skill
+      def special_skill
         driver = Driver.where(special_skill: params[:q].titleize).order(:position)
         render json: driver
-    end
+      end
 
-    def super
+      def super
         drivers = Driver.where(rarity: "Super").order(:position)
         render json: drivers
-    end
+      end
 
-    def test
+      def test
         driver = Driver.find_by(name: "Mario")
-        render json: !driver.nil? ? driver : []
+        render json: driver.nil? ? [] : driver
+      end
     end
-
+  end
 end

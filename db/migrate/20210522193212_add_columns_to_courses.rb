@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnsToCourses < ActiveRecord::Migration[6.1]
   def change
     add_column :courses, :top_shelf_drivers_base, :text, array: true, default: []

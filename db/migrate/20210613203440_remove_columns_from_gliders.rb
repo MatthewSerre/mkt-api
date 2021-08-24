@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveColumnsFromGliders < ActiveRecord::Migration[6.1]
   def change
     remove_column :gliders, :favorite_courses_base

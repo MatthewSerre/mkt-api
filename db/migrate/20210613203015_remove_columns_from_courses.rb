@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveColumnsFromCourses < ActiveRecord::Migration[6.1]
   def change
     remove_column :courses, :top_shelf_drivers_base
