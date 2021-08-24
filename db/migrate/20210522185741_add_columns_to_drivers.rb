@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnsToDrivers < ActiveRecord::Migration[6.1]
   def change
     add_column :drivers, :favorite_courses_level_3, :text, array: true, default: []

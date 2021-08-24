@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveColumnsFromDrivers < ActiveRecord::Migration[6.1]
   def change
     remove_column :drivers, :favorite_courses_base

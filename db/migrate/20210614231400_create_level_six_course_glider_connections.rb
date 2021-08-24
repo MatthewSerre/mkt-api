@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateLevelSixCourseGliderConnections < ActiveRecord::Migration[6.1]
   def change
     create_table :level_six_course_glider_connections do |t|

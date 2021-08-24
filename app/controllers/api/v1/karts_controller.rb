@@ -1,39 +1,44 @@
-class Api::V1::KartsController < ApplicationController
-    include Secured
+# frozen_string_literal: true
 
-    def index
+module Api
+  module V1
+    class KartsController < ApplicationController
+      include Secured
+
+      def index
         karts = Kart.all.order(:position)
         render json: karts
-    end
+      end
 
-    def high_end
-        karts = Kart.where(rarity: "High-End").order(:position)
+      def high_end
+        karts = Kart.where(rarity: 'High-End').order(:position)
         render json: karts
-    end
+      end
 
-    def name
+      def name
         kart = Kart.find_by(name: params[:q])
         render json: !kart.nil? ? kart : []
-    end
+      end
 
-    def name_contains
-        karts = Kart.where("name LIKE ?", "%" + params[:q].titleize + "%").order(:position)
+      def name_contains
+        karts = Kart.where('name LIKE ?', "%#{params[:q].titleize}%").order(:position)
         render json: karts
-    end
+      end
 
-    def normal
-        karts = Kart.where(rarity: "Normal").order(:position)
+      def normal
+        karts = Kart.where(rarity: 'Normal').order(:position)
         render json: karts
-    end
+      end
 
-    def special_skill
+      def special_skill
         kart = Kart.where(special_skill: params[:q].titleize).order(:position)
         render json: kart
-    end
+      end
 
-    def super
-        karts = Kart.where(rarity: "Super").order(:position)
+      def super
+        karts = Kart.where(rarity: 'Super').order(:position)
         render json: karts
+      end
     end
-
+  end
 end

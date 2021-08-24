@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddKartColumnsToCourses < ActiveRecord::Migration[6.1]
   def change
     add_column :courses, :top_shelf_karts_base, :text, array: true, default: []
