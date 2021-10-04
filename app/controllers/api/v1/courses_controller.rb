@@ -3,7 +3,7 @@
 module Api
   module V1
     class CoursesController < ApplicationController
-      include Secured
+      # include Secured
 
       def index
         courses = Course.all.order(:name)

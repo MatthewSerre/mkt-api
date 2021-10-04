@@ -3,7 +3,7 @@
 module Api
   module V1
     class KartsController < ApplicationController
-      include Secured
+      # include Secured
 
       def index
         karts = Kart.all.order(:position)

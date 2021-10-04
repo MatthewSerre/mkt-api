@@ -3,8 +3,8 @@
 module Api
   module V1
     class DriversController < ApplicationController
-      include Secured
-      skip_before_action :authenticate_request!, only: [:test]
+      # include Secured
+      # skip_before_action :authenticate_request!, only: [:test]
 
       def index
         drivers = Driver.all.order(:position)
