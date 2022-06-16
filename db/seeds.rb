@@ -81,7 +81,7 @@ courses_csv.each do |row|
          else
            "#{row['name']} #{row['suffix']}"
          end
-  name.strip!
+  name.strip
   begin
     c = Course.find_or_create_by(name: name)
     c.debut_tour = row['debut_tour']
@@ -103,30 +103,30 @@ drivers_csv.each do |row|
     unless row['level_one_favorite_courses'].blank?
       row['level_one_favorite_courses'].split(/\s*,\s*/).each do |course|
         c = Course.find_by(name: course)
-        d.level_one_favorite_courses << c unless d.level_one_favorite_courses.include?(c)
+        CourseDriverConnection.create(course: c, driver: d, level: 1)
         puts "Connection established between #{d.name} and #{c.name}."
       rescue StandardError => e
         puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
       end
     end
-    unless row['level_three_favorite_courses'].blank?
-      row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
-        c = Course.find_by(name: course)
-        d.level_three_favorite_courses << c unless d.level_three_favorite_courses.include?(c)
-        puts "Connection established between #{d.name} and #{c.name}."
-      rescue StandardError => e
-        puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
-      end
-    end
-    unless row['level_six_favorite_courses'].blank?
-      row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
-        c = Course.find_by(name: course)
-        d.level_six_favorite_courses << c unless d.level_six_favorite_courses.include?(c)
-        puts "Connection established between #{d.name} and #{c.name}."
-      rescue StandardError => e
-        puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
-      end
-    end
+    # unless row['level_three_favorite_courses'].blank?
+    #   row['level_three_favorite_courses'].split(/\s*,\s*/).each do |course|
+    #     c = Course.find_by(name: course)
+    #     d.level_three_favorite_courses << c unless d.level_three_favorite_courses.include?(c)
+    #     puts "Connection established between #{d.name} and #{c.name}."
+    #   rescue StandardError => e
+    #     puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
+    #   end
+    # end
+    # unless row['level_six_favorite_courses'].blank?
+    #   row['level_six_favorite_courses'].split(/\s*,\s*/).each do |course|
+    #     c = Course.find_by(name: course)
+    #     d.level_six_favorite_courses << c unless d.level_six_favorite_courses.include?(c)
+    #     puts "Connection established between #{d.name} and #{c.name}."
+    #   rescue StandardError => e
+    #     puts "Error establishing connection between #{d.name} and #{course}. #{e.class.name}: #{e.message}"
+    #   end
+    # end
   rescue StandardError => e
     puts "#{e.class.name}: #{e.message}"
   end

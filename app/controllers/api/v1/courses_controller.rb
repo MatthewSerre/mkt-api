@@ -31,7 +31,7 @@ module Api
       end
 
       def ranked
-        courses = Course.where(is_ranked: true).order(:name).order(:name)
+        courses = Course.where(is_ranked: true).order(:name)
         render json: courses
       end
 

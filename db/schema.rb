@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_231400) do
+ActiveRecord::Schema.define(version: 2022_06_16_022728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "course_driver_connections", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "driver_id", null: false
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "favorite"
+    t.index ["course_id"], name: "index_course_driver_connections_on_course_id"
+    t.index ["driver_id"], name: "index_course_driver_connections_on_driver_id"
+  end
+
+  create_table "course_glider_connections", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "glider_id", null: false
+    t.integer "level"
+    t.boolean "favorite"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_course_glider_connections_on_course_id"
+    t.index ["glider_id"], name: "index_course_glider_connections_on_glider_id"
+  end
+
+  create_table "course_kart_connections", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "kart_id", null: false
+    t.integer "level"
+    t.boolean "favorite"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_course_kart_connections_on_course_id"
+    t.index ["kart_id"], name: "index_course_kart_connections_on_kart_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -57,6 +90,8 @@ ActiveRecord::Schema.define(version: 2021_06_14_231400) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
     t.boolean "is_in_pipes", default: false
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_drivers_on_course_id"
   end
 
   create_table "gliders", force: :cascade do |t|
@@ -147,4 +182,11 @@ ActiveRecord::Schema.define(version: 2021_06_14_231400) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "course_driver_connections", "courses"
+  add_foreign_key "course_driver_connections", "drivers"
+  add_foreign_key "course_glider_connections", "courses"
+  add_foreign_key "course_glider_connections", "gliders"
+  add_foreign_key "course_kart_connections", "courses"
+  add_foreign_key "course_kart_connections", "karts"
+  add_foreign_key "drivers", "courses"
 end
