@@ -3,7 +3,7 @@
 class Kart < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
-  has_many :course_kart_connections, class_name: "CourseKartConnection"
+  has_many :course_kart_connections, class_name: "CourseKartConnection", dependent: :restrict_with_exception
   has_many :courses, through: :course_kart_connections, source: :course
 
   def level_one_favorite_courses

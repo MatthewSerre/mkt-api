@@ -3,7 +3,7 @@
 class Glider < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
-  has_many :course_glider_connections, class_name: "CourseGliderConnection"
+  has_many :course_glider_connections, class_name: "CourseGliderConnection", dependent: :restrict_with_exception
   has_many :courses, through: :course_glider_connections, source: :course
 
   def level_one_favorite_courses

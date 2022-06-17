@@ -3,7 +3,7 @@
 class Driver < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
-  has_many :course_driver_connections, class_name: "CourseDriverConnection"
+  has_many :course_driver_connections, class_name: "CourseDriverConnection", dependent: :restrict_with_exception
   has_many :courses, through: :course_driver_connections, source: :course
 
   def level_one_favorite_courses

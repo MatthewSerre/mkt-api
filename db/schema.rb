@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_022728) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_06_17_000232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,8 +18,8 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
     t.bigint "course_id", null: false
     t.bigint "driver_id", null: false
     t.integer "level"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "favorite"
     t.index ["course_id"], name: "index_course_driver_connections_on_course_id"
     t.index ["driver_id"], name: "index_course_driver_connections_on_driver_id"
@@ -31,8 +30,8 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
     t.bigint "glider_id", null: false
     t.integer "level"
     t.boolean "favorite"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_glider_connections_on_course_id"
     t.index ["glider_id"], name: "index_course_glider_connections_on_glider_id"
   end
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
     t.bigint "kart_id", null: false
     t.integer "level"
     t.boolean "favorite"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_kart_connections_on_course_id"
     t.index ["kart_id"], name: "index_course_kart_connections_on_kart_id"
   end
@@ -51,15 +50,16 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "debut_tour"
-    t.datetime "date_added"
+    t.datetime "date_added", precision: nil
     t.string "debut_game"
     t.boolean "is_reverse"
     t.boolean "is_trick"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "debut_system"
-    t.boolean "is_ranked_week_1", default: false
-    t.boolean "is_ranked_week_2", default: false
+    t.boolean "is_ranked_week_one", default: false
+    t.boolean "is_ranked_week_two", default: false
+    t.index ["name"], name: "index_courses_on_name", unique: true
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
     t.string "rarity"
     t.string "special_skill"
     t.string "debut_tour"
-    t.datetime "date_added"
+    t.datetime "date_added", precision: nil
     t.boolean "extended_tongue", default: false
     t.boolean "horns", default: false
     t.boolean "mustache", default: false
@@ -86,24 +86,24 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
     t.boolean "ribbon", default: false
     t.boolean "short_sleeves", default: false
     t.boolean "tie", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "position"
     t.boolean "is_in_pipes", default: false
-    t.bigint "course_id"
-    t.index ["course_id"], name: "index_drivers_on_course_id"
+    t.index ["name"], name: "index_drivers_on_name", unique: true
   end
 
   create_table "gliders", force: :cascade do |t|
     t.string "name"
     t.string "debut_tour"
-    t.datetime "date_added"
+    t.datetime "date_added", precision: nil
     t.boolean "is_daily_select"
     t.boolean "is_in_pipes"
     t.string "special_skill"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "position"
+    t.index ["name"], name: "index_gliders_on_name", unique: true
   end
 
   create_table "karts", force: :cascade do |t|
@@ -111,75 +111,13 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
     t.string "rarity"
     t.string "special_skill"
     t.boolean "is_daily_select"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "position"
-    t.datetime "date_added"
+    t.datetime "date_added", precision: nil
     t.string "debut_tour"
     t.boolean "is_in_pipes"
-  end
-
-  create_table "level_one_course_driver_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "driver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_one_course_glider_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "glider_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_one_course_kart_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "kart_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_six_course_driver_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "driver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_six_course_glider_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "glider_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_six_course_kart_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "kart_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_three_course_driver_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "driver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_three_course_glider_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "glider_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "level_three_course_kart_connections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "kart_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_karts_on_name", unique: true
   end
 
   add_foreign_key "course_driver_connections", "courses"
@@ -188,5 +126,4 @@ ActiveRecord::Schema.define(version: 2022_06_16_022728) do
   add_foreign_key "course_glider_connections", "gliders"
   add_foreign_key "course_kart_connections", "courses"
   add_foreign_key "course_kart_connections", "karts"
-  add_foreign_key "drivers", "courses"
 end

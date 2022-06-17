@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class Course < ApplicationRecord
-  # validates :name, uniqueness: true, presence: true
+  validates :name, uniqueness: true, presence: true
 
   # Driver connections
-  has_many :course_driver_connections, class_name: "CourseDriverConnection"
+  has_many :course_driver_connections, class_name: "CourseDriverConnection", dependent: :restrict_with_exception
   has_many :drivers, through: :course_driver_connections, source: :driver
 
   # Kart connections
-  has_many :course_kart_connections, class_name: "CourseKartConnection"
+  has_many :course_kart_connections, class_name: "CourseKartConnection", dependent: :restrict_with_exception
   has_many :karts, through: :course_kart_connections, source: :kart
 
   # Glider connections
-  has_many :course_glider_connections, class_name: "CourseGliderConnection"
+  has_many :course_glider_connections, class_name: "CourseGliderConnection", dependent: :restrict_with_exception
   has_many :gliders, through: :course_glider_connections, source: :glider
 
   def level_one_favorite_drivers
