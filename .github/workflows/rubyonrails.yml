@@ -37,6 +37,7 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:schema:load
       # Add or replace test runners here
+      - run: gem install rspec-rails
       - name: Run tests
         run: rspec
 
