@@ -16,6 +16,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 gem "rack-cors"
 gem "rails", "~> 7.0"
+gem "strscan", "3.0.1"
 
 group :development, :test do
   gem "byebug"
