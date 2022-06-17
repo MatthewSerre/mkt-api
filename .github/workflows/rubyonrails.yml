@@ -49,6 +49,6 @@ jobs:
         uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
         with:
           bundler-cache: true
-      - run: gem install rubocop rubocop-performance
+      - run: gem install rubocop rubocop-performance rubocop-rails
       - name: Lint Ruby files
         run: rubocop
