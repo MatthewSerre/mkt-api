@@ -7,6 +7,7 @@ ruby "3.0.3"
 
 gem "active_model_serializers"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "devise"
 gem "digest", "3.0"
 gem "google_drive"
 gem "jwt"

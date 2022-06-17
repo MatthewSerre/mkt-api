@@ -17,6 +17,7 @@ AllCops:
     - "app/views/**/*"
     - "config/environments/*"
     - "node_modules/**/*"
+    - "config/initializers/devise.rb"
 
 # Metrics Cops
 
