@@ -4,7 +4,7 @@ class Course < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   # Driver connections
-  has_many :course_driver_connections, class_name: "CourseDriverConnection", dependent: :restrict_with_exception
+  has_many :course_driver_connections, dependent: :restrict_with_exception
   has_many :drivers, through: :course_driver_connections, source: :driver
 
   # Kart connections

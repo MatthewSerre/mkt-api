@@ -9,6 +9,7 @@ gem "active_model_serializers"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "devise"
 gem "digest", "3.0"
+gem "faker"
 gem "google_drive"
 gem "jwt"
 gem "pg", "~> 1.1"
@@ -18,6 +19,9 @@ gem "rails", "~> 7.0"
 
 group :development, :test do
   gem "byebug"
+  gem "factory_bot_rails"
+  gem "rspec-rails", "~> 6.0.0.rc1"
+  gem "shoulda"
 end
 
 group :development do
