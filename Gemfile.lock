@@ -82,7 +82,7 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     declarative (0.0.20)
-    digest (3.1.0)
+    digest (3.0.0)
     erubi (1.10.0)
     faraday (1.10.0)
       faraday-em_http (~> 1.0)
@@ -249,6 +249,7 @@ DEPENDENCIES
   active_model_serializers
   bootsnap (>= 1.4.4)
   byebug
+  digest (= 3.0)
   google_drive
   jwt
   listen (~> 3.3)
