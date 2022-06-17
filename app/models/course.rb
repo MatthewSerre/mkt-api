@@ -15,6 +15,14 @@ class Course < ApplicationRecord
   has_many :course_glider_connections, class_name: "CourseGliderConnection", dependent: :restrict_with_exception
   has_many :gliders, through: :course_glider_connections, source: :glider
 
+  # Class methods
+
+  def self.debut_system(blah)
+    where("debut_system LIKE ?", blah).order(:name)
+  end
+
+  # Instance methods
+
   def level_one_favorite_drivers
     course_driver_connections.where(level: 1).map(&:driver)
   end

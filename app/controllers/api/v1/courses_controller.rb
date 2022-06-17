@@ -11,11 +11,7 @@ module Api
       end
 
       def debut_system
-        courses = Course.where(debut_system: if params[:q].casecmp("mobile").zero?
-                                               params[:q].titleize
-                                             else
-                                               params[:q].upcase
-                                             end).order(:name)
+        courses = Course.debut_system(params[:q])
         render json: courses
       end
 
