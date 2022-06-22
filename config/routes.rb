@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   root to: "home#index"
 
+  get "developers", to: "home#developers"
+  put "refresh_api_key", to: "home#refresh_api_key"
+
   devise_for :users
 
   namespace :api do
